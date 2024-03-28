@@ -1,0 +1,23 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About Page{% endblock %}
+
+{% block body %}
+    <h1>About</h1>
+    <div class="container">
+        <div class="item item-1"> 
+            <h2>Om kursen MVC</h2>
+            <p>Kursen MVC handlar om att skapa en hemsida med verktyget Symfony. Men inte bara det.
+                Vi ska även koppla ihop hemsidan med databaser och jobba objektorienterat i PHP.
+                Vi får även träna på att använda oss av Twig för att skapa dynamiska sidor. Även träning 
+                i hur man kan använda Git lär vi oss också.
+            </p>
+            <img class="php_picture" src="{{ asset('build/images/php.png') }}" alt="">
+        </div>
+        <div class="item item-2">
+            <h2>GitHub länkar</h2>
+            <p>GitHub länk till min hemsida: <a href="https://github.com/alwwen/mvc">HÄR</a></p>
+            <p>GitHub länk till kursrepot: <a href="https://github.com/dbwebb-se/mvc">HÄR</a></p>
+        </div>
+    </div>
+{% endblock %}
