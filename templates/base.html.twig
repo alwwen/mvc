@@ -13,7 +13,34 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
+    <header class="header">
+        <p>MVC</p>
+        <nav>
+            <ul>
+                <li><a href="{{ path('home') }}">Home</a></li>
+                <li><a href="{{ path('about') }}">About</a></li>
+                <li><a href="{{ path('report') }}">Report</a></li>
+                <li><a href="{{ path('lucky') }}">Lucky</a></li>
+            </ul>
+        </nav>
+    </header>
     <body>
         {% block body %}{% endblock %}
     </body>
+    <footer>
+        <div class="footer-text">
+            <h2>About the course</h2>
+            <p>Kursen MVC handlar om att skapa en hemsida med verktyget Symfony. Men inte bara det.
+                Vi ska även koppla ihop hemsidan med databaser och jobba objektorienterat i PHP.
+                Vi får även träna på att använda oss av Twig för att skapa dynamiska sidor. Även träning 
+                i hur man kan använda Git lär vi oss också.
+            </p>
+        </div>
+        <div class="footer-links">
+            <h2>Github Links</h2>
+            <a href="https://github.com/alwwen/mvc">Github Repo for this site</a>
+            <a href="https://github.com/dbwebb-se/mvc">Github Repo for the course</a>
+        </div>
+        <div class="footer-signature">&copy; Alexander Winblad 2024</div>
+    </footer>
 </html>

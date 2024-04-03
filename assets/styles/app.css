@@ -55,3 +55,81 @@ h1 {
         background-position: 0% 0%;
     }
 }
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border: 2px solid #000000;
+    background-color:#e4e4e4;
+}
+
+.header p {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.header nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.header nav ul li {
+    margin-right: 20px;
+}
+
+.header nav ul li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header nav ul li:last-child {
+    margin-right: 0;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-gap: 20px;
+    text-align: center;
+    align-items: start; /* Align items to the start (top) */
+    border-top: 4px double #000000;
+    background-color:#e4e4e4;
+    margin-bottom: 10px;
+}
+
+.footer-text, .footer-links {
+    display: flex;
+    flex-direction: column; /* Makes sure content is laid out vertically */
+    padding: 10px;
+}
+
+.footer-text h2, .footer-links h2 {
+    align-self: start; /* Aligns headings to the start (top) */
+    margin-bottom: 10px; /* Add space below headings */
+}
+
+.footer-text p {
+    text-align: left; /* Aligns the paragraph text to the left */
+}
+
+.footer-links {
+    align-items: start; /* Align items to the start (left) in the grid cell */
+}
+
+.footer-links a {
+    text-decoration: none;
+    padding: 5px 0; /* Add vertical padding for better spacing */
+}
+
+.footer-signature {
+    grid-column: 1 / -1; /* Span across all columns */
+    grid-row: 2;
+    text-align: center;
+    padding-bottom: 10px;
+}
