@@ -32,4 +32,14 @@ class HomeController extends AbstractController
         ];
         return $this->render('lucky.html.twig', $data);
     }
+    #[Route('/api', name: 'api')]
+    public function api(): Response
+    {
+        $data = [
+            'routes' => [
+                'api/quote' => "Shows quotes",
+            ],
+        ];
+        return $this->render('api.html.twig', $data);
+    }
 }

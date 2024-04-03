@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}API Page{% endblock %}
+
+{% block body %}
+    <h1>API Page</h1>
+    <div class="container">
+        <table class="routes-table">
+            <caption>API Routes</caption>
+            <thead>
+                <tr>
+                    <th>Route</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for route, description in routes %}
+                <tr>
+                    <td>{{ route }}</td>
+                    <td>{{ description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

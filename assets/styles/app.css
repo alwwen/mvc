@@ -133,3 +133,39 @@ footer {
     text-align: center;
     padding-bottom: 10px;
 }
+
+
+.routes-table caption {
+    caption-side: top; /* Default value, can be changed to 'bottom' */
+    font-size: larger; /* Makes the caption text larger */
+    font-weight: bold; /* Makes the caption text bold */
+    margin-bottom: 10px; /* Adds space between the caption and the table */
+    text-align: center; /* Centers the caption text */
+}
+
+.routes-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.routes-table td, .routes-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.routes-table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+.routes-table tr:hover {
+    background-color: #ddd;
+}
+
+.routes-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
