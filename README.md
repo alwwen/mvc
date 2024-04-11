@@ -1,4 +1,4 @@
-![php code image](/report/assets/images/php.png)
+![php code image](/assets/images/php.png)
 # MVC
 This is my report page using Symfony in the course MVC.
 
