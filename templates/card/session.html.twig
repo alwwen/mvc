@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Session{% endblock %}
+
+{% block body %}
+    <h1>Session</h1>
+    {{dump(sessionData)}}
+    {{ include('card/flash.html.twig') }}
+{% endblock %}
