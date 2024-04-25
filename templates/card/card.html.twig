@@ -11,4 +11,16 @@
     <a href="{{path('cardShuffle')}}"><p>Shuffle, reset and show the deck</p></a>
     <a href="{{path('cardDraw')}}"><p>Draw one card, show that card and how many are left.</p></a>
     <a href="{{path('cardsDraw', {'number': 5})}}"><p>Draw five cards, show those cards and how many are left.</p></a>
+
+    <div class="box">
+        <h2>Code Structure</h2>
+        <p>
+            Jag har valt att köra på 4 klasser. Jag har Card, CardGraphics, DeckOfCards och CardHand.
+            Jag började med att sätta upp lite grunder på klasserna nu bara även om allt inte används.
+            CardGraphics ärver från Card och har den har extra att den har en grafisk representation av kortet.
+            Jag har en kompisition mellan Card/CardGraphics och DeckOfCards. Det blir så för jag skapar korten i DeckOfCards.
+            Jag har även en aggregation mellan CardHand och Card.
+        </p>
+    </div>
+    <img src="{{ asset('build/images/UML.png') }}" alt="UML Diagram">
 {% endblock %}
