@@ -6,7 +6,7 @@
     <h1>API Page</h1>
     <div class="container">
         <table class="routes-table">
-            <caption>API Routes</caption>
+            <caption>API GET Routes</caption>
             <thead>
                 <tr>
                     <th>Route</th>
@@ -14,10 +14,33 @@
                 </tr>
             </thead>
             <tbody>
-                {% for route, description in routes %}
+                {% for route, description in getRoutes %}
                 <tr>
                     <td>{{ route }}</td>
                     <td>{{ description }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <table class="routes-table">
+            <caption>API POST Routes</caption>
+            <thead>
+                <tr>
+                    <th>Route</th>
+                    <th>Description</th>
+                    <th>Post Button</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for route, data in postRoutes %}
+                <tr>
+                    <td>{{ route }}</td>
+                    <td>{{ data.description }}</td>
+                    <td>
+                        <form action="{{ path(data.buttonRoute, {'number': '3'}) }}" method="post">
+                            <button type="submit">Click me :D</button>
+                        </form>
+                    </td>
                 </tr>
                 {% endfor %}
             </tbody>

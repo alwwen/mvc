@@ -19,9 +19,14 @@ class ApiJsonController
             'quote5' => 'If you set your goals ridiculously high and it\'s a failure, you will fail above everyone else\'s success.',
         ];
         $quote = $quotes[array_rand($quotes)];
-        $response = new JsonResponse(['quote' => $quote]);
+        $date = date('Y-m-d H:i:s');
+        $jsonArray = [
+            'quote' => $quote,
+            'date' => $date,
+        ];
+        $response = new JsonResponse($jsonArray);
         $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+            $response->getEncodingOptions() | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT
         );
         return $response;
     }

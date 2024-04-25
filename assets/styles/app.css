@@ -152,6 +152,7 @@ footer {
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
+    margin-top: 1rem;
 }
 
 .routes-table td, .routes-table th {
@@ -176,10 +177,6 @@ footer {
 }
 
 .die {
-    font-size: 2em;
-}
-
-li {
     font-size: 2em;
 }
 
@@ -227,8 +224,4 @@ li {
     padding: 10px;
     text-align: center;
     margin: 5px auto;
-}
-
-li p {
-    font-size: 1em;
 }

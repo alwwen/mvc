@@ -36,8 +36,26 @@ class HomeController extends AbstractController
     public function api(): Response
     {
         $data = [
-            'routes' => [
+            'getRoutes' => [
                 'api/quote' => "Shows quotes",
+                'api/deck' => "Shows a deck of cards sorted",
+            ],
+            'postRoutes' => [
+                'api/deck/shuffle' => [
+                    'description' => "Shuffle the deck of cards",
+                    'buttonRoute' => "apiShuffle",
+                    'field' => '',
+                ],
+                'api/deck/draw' => [
+                    'description' => "Draw a card from the deck",
+                    'buttonRoute' => "apiDrawCard",
+                    'field' => '',
+                ],
+                'api/deck/draw/{number}' => [
+                    'description' => "Draw a number of cards from the deck. 3 for now when showing",
+                    'buttonRoute' => "apiDrawCards",
+                    'field' => "number",
+                ],
             ],
         ];
         return $this->render('api.html.twig', $data);
