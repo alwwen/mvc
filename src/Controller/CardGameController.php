@@ -13,24 +13,22 @@ use App\Card\CardGraphic;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
 
-class CardGameController extends AbstractController 
+class CardGameController extends AbstractController
 {
     #[Route("/session", name: "session")]
     public function session(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $sessionData = $session->all();
         $data = [
             "sessionData" => $sessionData
         ];
-        return $this->render('card/session.html.twig', $data); 
+        return $this->render('card/session.html.twig', $data);
     }
     #[Route("/session/delete", name: "sessionDelete")]
     public function sessionDelete(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $session->clear();
         $this->addFlash("notice", "Nu är sessionen raderad");
         return $this->redirectToRoute("session");
@@ -38,14 +36,13 @@ class CardGameController extends AbstractController
     #[Route("/card", name: "card")]
     public function card(): Response
     {
-        return $this->render('card/card.html.twig'); 
+        return $this->render('card/card.html.twig');
     }
     #[Route("/card/deck", name: "cardDeck")]
     public function cardDeck(
         SessionInterface $session,
         Request $request
-    ): Response
-    {
+    ): Response {
         if (!is_null($session->get('deck'))) {
             $deck = $session->get('deck');
             $deck->sort();
@@ -55,14 +52,13 @@ class CardGameController extends AbstractController
         }
         return $this->render('card/cardDeck.html.twig', [
             'deck' => $deck
-        ]); 
+        ]);
     }
     #[Route("/card/shuffle", name: "cardShuffle")]
     public function cardShuffle(
         SessionInterface $session,
         Request $request
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCards();
         $deck->shuffle();
         $session->set('deck', $deck);
@@ -75,8 +71,7 @@ class CardGameController extends AbstractController
     public function cardDraw(
         SessionInterface $session,
         Request $request
-    ): Response
-    {
+    ): Response {
         if (!is_null($session->get('deck'))) {
             $deck = $session->get('deck');
             $card = $deck->drawCard();
@@ -97,8 +92,7 @@ class CardGameController extends AbstractController
     public function cardsDraw(
         SessionInterface $session,
         Request $request
-    ): Response
-    {
+    ): Response {
         $number = (int) $request->attributes->get('number');
         if (!is_null($session->get('deck'))) {
             $deck = $session->get('deck');

@@ -47,6 +47,38 @@
             </li>
         </ul>
         <h2 id="kmom02">kmom02</h2>
+        <ul>
+            <li>
+                <p>
+                    Arv används i PHP som i vilket programmeringsspråk som helst. Man har en basklass med metoder och sen har man klasser 
+                    som ärver från basklassen. De klasser som ärver från basklassen kan använda sig av samma metoder som basklassen och även dess konstruktor.
+                    Men den kan även ha sina egna metoder och konstruktor. Just för ett kortspel är det väldigt bra.
+                    Komposition då inkluderar man en annan klass i samma fil som en annan klass och skapar instanser av den importerade klassen i den klassen som du skriver.
+                    Interface fungerar som en mall för klasser som använder sig av det interfacet. I interfacet kan man sätta upp metoder men bara vad metoden ska heta och dess parametrar men ingen funktionalitet.
+                    Jag skulle vilja jämföra det med hur man gör i C/C++ med cpp filer och hpp. Alltså hpp filen sätts upp som ett skal hur det ska fungera medans cpp filen har funktionaliteten. Skilladen mellan 
+                    C/C++ och PHP Interface är att i C/C++ så gäller det den klassen med cpp/hpp filerna medans ett Interface är mer för flera klasser.
+                    Trait används för att komma runt restriktionen kring att PHP endast kan köra 1 nivås arv. Då kan man sätta upp dessa i sin egna klass hierarki och använda det som ett extra "djup". 
+                </p>
+                <p>
+                    Jag är ganska nöjd med min implementation. Jag började med klasserna då jag kände att det var det viktigaste att få rätt först. Sedan att lägga in de korrekt på hemsidan med routsen och twig filerna.
+                    Jag hade ganska mycket problem med att få allt att fungera med twig filerna men efter jag läste på twigs egna hemsida gällande hur det fungerar släppte det.
+                    Jag är missnöjd över en sak och det är samma sak som jag skulle vija förbättra också. Jag fick inte till det med att använda ett form med POST på sista API kravet som inte var optionellt.
+                    Jag ville egentligen ha en input som tog in en siffra och uppdaterade pathen så att den skickades med där på korrekt sätt. Men eftersom jag inte kan veta siffran i förväg behövde jag dynamiskt uppdatera den 
+                    vid submitten. Då hade jag behövt koppla in JS eller skickat vidare den först till en GET-Route som tog hand om det och sedan skickade vidare den till POST Routen. Blev inte som jag tänkte och fick inte till det 
+                    så jag satte ett standard värde som skickas med är 3 så att man kan se att den fungerar iallafall då det inte stod något i kravet att man ska kunna ändra det.
+                </p>
+                <p>
+                    Jag uppskattar att jobba med MVC. Det jag har lite svårt för är hur allt kopplas ihop just med Symfony. Tycker det är väldigt rörigt med GET och POST för tycker inte de sammarbetar så bra.
+                    Hur man jobbar med Routes och sessionerna är inga problem. Det är just där med att skicka runt datan med GET och POST som jag har svårt för.
+                </p>
+                <p>
+                    Min TIL för detta kursmomentet är ändå Routes och hur GET och POST fungerar i Symfony. Även om det är det svåraste för mig att få koll på 
+                    så känner jag verkligen att jag har fått en bättre förståelse för det. I början av kursmomentet gick ingenting men efter mycket nötande så fungerar allt.
+                    En liten extra TIL är att syntaxen för att "casta" om en variabel till en annan typ är mer likt C/C++ än Python. Det ser mer ut som syntaxen från C/C++ med pekare vilket 
+                    jag tyckte var kul att se.
+                </p>
+            </li>
+        </ul>
         <h2 id="kmom03">kmom03</h2>
         <h2 id="kmom04">kmom04</h2>
         <h2 id="kmom05">kmom05</h2>

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Card;
 
 class CardGraphic extends Card
@@ -74,5 +75,5 @@ class CardGraphic extends Card
     public function getAsString(): string
     {
         return $this->representation[$this->suit][$this->value];
-    }    
+    }
 }

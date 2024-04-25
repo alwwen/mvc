@@ -36,8 +36,7 @@ class CardJsonController
     public function apiShuffle(
         SessionInterface $session,
         Request $request
-    ): Response
-    {
+    ): Response {
         $deck = new DeckOfCards();
         $deck->shuffle();
         $session->set('deck', $deck);
@@ -58,8 +57,7 @@ class CardJsonController
     public function apiDrawCard(
         SessionInterface $session,
         Request $request
-    ): Response
-    {
+    ): Response {
         if (!is_null($session->get('deck'))) {
             $deck = $session->get('deck');
             $card = $deck->drawCard();
@@ -86,8 +84,7 @@ class CardJsonController
     public function apiDrawCards(
         SessionInterface $session,
         Request $request
-    ): Response
-    {
+    ): Response {
         $number = (int) $request->attributes->get('number');
         if (!is_null($session->get('deck'))) {
             $deck = $session->get('deck');
