@@ -2,6 +2,7 @@
 
 namespace App\Card;
 use App\Card\Card;
+use App\Card\CardGraphic;
 
 class DeckOfCards {
     private $deck = [];
@@ -12,7 +13,7 @@ class DeckOfCards {
     {
         foreach ($this->suits as $suit) {
             foreach ($this->values as $value) {
-                $card = new Card();
+                $card = new CardGraphic();
                 $card->setValue($value);
                 $card->setSuit($suit);
                 $this->deck[] = $card;
@@ -30,6 +31,15 @@ class DeckOfCards {
         shuffle($this->deck);
     }
 
+    public function sort(): void {
+        usort($this->deck, function($a, $b) {
+            if ($a->getSuit() == $b->getSuit()) {
+                return $a->getValue() <=> $b->getValue();
+            }
+            return $a->getSuit() <=> $b->getSuit();
+        });
+    }
+
     public function drawCard(): Card
     {
         return array_shift($this->deck);
@@ -38,5 +48,10 @@ class DeckOfCards {
     public function drawCards(int $numberOfCards): array
     {
         return array_splice($this->deck, 0, $numberOfCards);
+    }
+
+    public function getDeckSize(): int
+    {
+        return count($this->deck);
     }
 }

@@ -4,5 +4,11 @@
 
 {% block body %}
     <h1>Card Home page</h1>
-    <p>Hejsan svejsan</p>
+    <a href="{{path('session')}}"><p>Session</p></a>
+    <a href="{{path('sessionDelete')}}"><p>Clear Session</p></a>
+    <p>Choose a card game to play.</p>
+    <a href="{{path('cardDeck')}}"><p>Show the deck sorted</p></a>
+    <a href="{{path('cardShuffle')}}"><p>Shuffle, reset and show the deck</p></a>
+    <a href="{{path('cardDraw')}}"><p>Draw one card, show that card and how many are left.</p></a>
+    <a href="{{path('cardsDraw', {'number': 5})}}"><p>Draw five cards, show those cards and how many are left.</p></a>
 {% endblock %}

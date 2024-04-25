@@ -202,3 +202,20 @@ li {
 .flash-warning:before {
     content: "⚠";
 }
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    font-size: 6rem;
+    margin: 0.7rem;
+    width: auto;
+    text-align: center;
+}
+
+.card_red {
+    color: red;
+}

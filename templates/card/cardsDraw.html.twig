@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Cards Draw{% endblock %}
+
+{% block body %}
+    <h1>Cards Draw page</h1>
+    <p>Amount of cards left: {{cardsLeft}}</p>
+    <div class="cards">
+        {% for card in hand %}
+            {% if card.suit == "♥️" or card.suit == "♦️" %}
+                <p class="card card_red">{{ card.getAsString() }}</p>
+            {% else %}
+                <p class="card">{{ card.getAsString() }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}
