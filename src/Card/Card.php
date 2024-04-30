@@ -4,13 +4,13 @@ namespace App\Card;
 
 class Card
 {
-    protected $value;
-    protected $suit;
+    protected int $value;
+    protected string $suit;
 
     public function __construct()
     {
-        $this->value = null;
-        $this->suit = null;
+        $this->value = 0;
+        $this->suit = "";
     }
     public function getValue(): int
     {

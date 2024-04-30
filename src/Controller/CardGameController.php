@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
+use Exception;
 
 use App\Card\Card;
 use App\Card\CardGraphic;
@@ -40,24 +41,28 @@ class CardGameController extends AbstractController
     }
     #[Route("/card/deck", name: "cardDeck")]
     public function cardDeck(
-        SessionInterface $session,
-        Request $request
+        SessionInterface $session
     ): Response {
-        if (!is_null($session->get('deck'))) {
-            $deck = $session->get('deck');
-            $deck->sort();
-        } else {
+        // if (!is_null($session->get('deck'))) {
+        //     $deck = $session->get('deck');
+        //     $deck->sort();
+        // } else {
+        //     $deck = new DeckOfCards();
+        //     $session->set('deck', $deck);
+        // }
+        $deck = $session->get('deck');
+        if (!$deck instanceof DeckOfCards) {
             $deck = new DeckOfCards();
-            $session->set('deck', $deck);
         }
+        $deck->sort();
+        $session->set('deck', $deck);
         return $this->render('card/cardDeck.html.twig', [
             'deck' => $deck
         ]);
     }
     #[Route("/card/shuffle", name: "cardShuffle")]
     public function cardShuffle(
-        SessionInterface $session,
-        Request $request
+        SessionInterface $session
     ): Response {
         $deck = new DeckOfCards();
         $deck->shuffle();
@@ -69,19 +74,25 @@ class CardGameController extends AbstractController
 
     #[Route("/card/draw", name: "cardDraw")]
     public function cardDraw(
-        SessionInterface $session,
-        Request $request
+        SessionInterface $session
     ): Response {
-        if (!is_null($session->get('deck'))) {
-            $deck = $session->get('deck');
-            $card = $deck->drawCard();
-            $session->set('deck', $deck);
-        } else {
+        // if (!is_null($session->get('deck'))) {
+        //     $deck = $session->get('deck');
+        //     $card = $deck->drawCard();
+        //     $session->set('deck', $deck);
+        // } else {
+        //     $deck = new DeckOfCards();
+        //     $deck->shuffle();
+        //     $card = $deck->drawCard();
+        //     $session->set('deck', $deck);
+        // }
+        $deck = $session->get('deck');
+        if (!$deck instanceof DeckOfCards) {
             $deck = new DeckOfCards();
             $deck->shuffle();
-            $card = $deck->drawCard();
-            $session->set('deck', $deck);
         }
+        $card = $deck->drawCard();
+        $session->set('deck', $deck);
         return $this->render('card/cardDraw.html.twig', [
             'card' => $card,
             'cardsLeft' => $deck->getDeckSize()
@@ -93,17 +104,28 @@ class CardGameController extends AbstractController
         SessionInterface $session,
         Request $request
     ): Response {
-        $number = (int) $request->attributes->get('number');
-        if (!is_null($session->get('deck'))) {
-            $deck = $session->get('deck');
-            $hand = $deck->drawCards($number);
-            $session->set('deck', $deck);
-        } else {
+        $number = $request->attributes->get('number');
+        // if (!is_null($session->get('deck'))) {
+        //     $deck = $session->get('deck');
+        //     $hand = $deck->drawCards($number);
+        //     $session->set('deck', $deck);
+        // } else {
+        //     $deck = new DeckOfCards();
+        //     $deck->shuffle();
+        //     $hand = $deck->drawCards($number);
+        //     $session->set('deck', $deck);
+        // }
+        if (!is_numeric($number)) {
+            throw new Exception("Invalid number of cards requested.");
+        }
+        $number = (int) $number;
+        $deck = $session->get('deck');
+        if (!$deck instanceof DeckOfCards) {
             $deck = new DeckOfCards();
             $deck->shuffle();
-            $hand = $deck->drawCards($number);
-            $session->set('deck', $deck);
         }
+        $hand = $deck->drawCards($number);
+        $session->set('deck', $deck);
         return $this->render('card/cardsDraw.html.twig', [
             'hand' => $hand,
             'cardsLeft' => $deck->getDeckSize()

@@ -4,12 +4,22 @@ namespace App\Card;
 
 use App\Card\Card;
 use App\Card\CardGraphic;
+use Exception;
 
 class DeckOfCards
 {
+    /**
+     * @var array<Card> $deck
+     */
     private $deck = [];
-    private $suits = ['♠️', '♥️', '♦️', '♣️'];
-    private $values = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13'];
+    /**
+     * @var array<string> $suits
+     */
+    private static $suits = ['♠️', '♥️', '♦️', '♣️'];
+    /**
+     * @var array<int> $values
+     */
+    private static $values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
     public function __construct()
     {
@@ -23,6 +33,9 @@ class DeckOfCards
         }
     }
 
+    /**
+     * @return array<Card>
+     */
     public function getDeck(): array
     {
         return $this->deck;
@@ -35,19 +48,30 @@ class DeckOfCards
 
     public function sort(): void
     {
-        usort($this->deck, function ($a, $b) {
-            if ($a->getSuit() == $b->getSuit()) {
-                return $a->getValue() <=> $b->getValue();
+        usort($this->deck, function ($first, $second) {
+            if ($first->getSuit() == $second->getSuit()) {
+                return $first->getValue() <=> $second->getValue();
             }
-            return $a->getSuit() <=> $b->getSuit();
+            return $first->getSuit() <=> $second->getSuit();
         });
     }
 
+    /**
+     * @return Card
+     * @throws Exception If no cards are left in the deck.
+     */
     public function drawCard(): Card
     {
+        if (empty($this->deck)) {
+            throw new Exception("No more cards in the deck.");
+        }
         return array_shift($this->deck);
     }
 
+    /**
+     * @param int $numberOfCards
+     * @return array<Card>
+     */
     public function drawCards(int $numberOfCards): array
     {
         return array_splice($this->deck, 0, $numberOfCards);
