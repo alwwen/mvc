@@ -8,7 +8,7 @@ class CardGraphic extends Card
      * Representation of the card suit and value
      * @var array<string, array<int, string>> $representation
      */
-    private static $representation = [
+    private $representation = [
         '♠️' => [
             14 => '🂡',
             2 => '🂢',

@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Tjugoett{% endblock %}
+
+{% block body %}
+    <h1>Home Page for Tjugoett</h1>
+    {% if not game.playersTurn %}
+        <h3>The winner is {{winner}}</h3>
+        <form method="post" action="{{ path('game_init')}}">
+            <input type="submit" name="do_it" value="Play Again">
+        </form>
+    {% endif %}
+    <p>Player Score: {{game.playerValue}}</p>
+    <div class="cards">
+        
+        {% for card in game.player.cards %}
+            {% if card.suit == "♥️" or card.suit == "♦️" %}
+                <p class="card card_red">{{ card.getAsString() }}</p>
+            {% else %}
+                <p class="card">{{ card.getAsString() }}</p>
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% if game.playersTurn %}
+        <div class="cards">
+            {% if game.dealer.cards[0].suit == "♥️" or game.dealer.cards[0].suit == "♦️" %}
+                <p class="card card_red">{{ game.dealer.cards[0].getAsString() }}</p>
+            {% else %}
+                <p class="card">{{ game.dealer.cards[0].getAsString() }}</p>
+            {% endif %}
+            <p class="card">🂠</p>
+        </div>
+    {% else %}
+        <p>Dealer Score: {{game.dealerValue}}</p>
+        <div class="cards">
+            {% for card in game.dealer.cards %}
+                {% if card.suit == "♥️" or card.suit == "♦️" %}
+                    <p class="card card_red">{{ card.getAsString() }}</p>
+                {% else %}
+                    <p class="card">{{ card.getAsString() }}</p>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% if game.playersTurn %}
+        <form method="post" action="{{ path('game_hit')}}">
+            <input type="submit" name="do_it" value="Hit">
+        </form>
+        <form method="post" action="{{ path('game_stand')}}">
+            <input type="submit" name="do_it" value="Stand">
+        </form>
+    {% endif %}
+{% endblock %}

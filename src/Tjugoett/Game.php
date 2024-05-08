@@ -15,6 +15,8 @@ class Game
      */
     private $dealer;
     private bool $playersTurn;
+    private int $playerValue;
+    private int $dealerValue;
 
     public function __construct()
     {
@@ -43,6 +45,26 @@ class Game
         $this->dealer = $dealer;
     }
 
+    public function setPlayerValue(int $playerValue): void
+    {
+        $this->playerValue = $playerValue;
+    }
+
+    public function setDealerValue(int $dealerValue): void
+    {
+        $this->dealerValue = $dealerValue;
+    }
+
+    public function getPlayerValue(): int
+    {
+        return $this->playerValue;
+    }
+
+    public function getDealerValue(): int
+    {
+        return $this->dealerValue;
+    }
+
     public function newGame(): DeckOfCards
     {
         $deck = new DeckOfCards();
@@ -54,25 +76,28 @@ class Game
         $this->dealer->addCard($deck->drawCard());
         $this->player->addCard($deck->drawCard());
         $this->dealer->addCard($deck->drawCard());
+        $this->playerValue = $this->player->getHandValue();
+        $this->dealerValue = $this->dealer->getHandValue();
         return $deck;
     }
 
     public function hit(DeckOfCards $deck): void
     {
         $this->player->addCard($deck->drawCard());
+        $this->playerValue = $this->player->getHandValue();
     }
 
-    public function stand(DeckOfCards $deck): string
+    public function stand(DeckOfCards $deck): void
     {
         $this->playersTurn = false;
         $this->dealersTurn($deck);
-        return $this->winner();
     }
 
     public function dealersTurn(DeckOfCards $deck): void
     {
         while ($this->dealer->getHandValue() < 17) {
             $this->dealer->addCard($deck->drawCard());
+            $this->dealerValue = $this->dealer->getHandValue();
         }
     }
     
@@ -83,6 +108,9 @@ class Game
 
     public function winner(): string
     {
+        if ($this->playersTurn) {
+            return 'No winner yet.';
+        }
         $playerValue = $this->player->getHandValue();
         $dealerValue = $this->dealer->getHandValue();
         if ($playerValue <= 21 && ($playerValue > $dealerValue || $dealerValue > 21)) {

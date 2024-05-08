@@ -39,6 +39,7 @@ class HomeController extends AbstractController
             'getRoutes' => [
                 'api/quote' => "Shows quotes",
                 'api/deck' => "Shows a deck of cards sorted",
+                'api/game' => "Shows a game of 21",
             ],
             'postRoutes' => [
                 'api/deck/shuffle' => [
