@@ -28,6 +28,13 @@ class CardHand
         foreach ($this->cards as $card) {
             $value += $card->getValue();
         }
+        if ($value > 21) {
+            foreach ($this->cards as $card) {
+                if ($card->getValue() == 14) {
+                    $value -= 13;
+                }
+            }
+        }
         return $value;
     }
 }

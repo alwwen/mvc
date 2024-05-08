@@ -10,7 +10,7 @@ class CardGraphic extends Card
      */
     private static $representation = [
         '♠️' => [
-            1 => '🂡',
+            14 => '🂡',
             2 => '🂢',
             3 => '🂣',
             4 => '🂤',
@@ -25,7 +25,7 @@ class CardGraphic extends Card
             13 => '🂮',
         ],
         '♥️' => [
-            1 => '🂱',
+            14 => '🂱',
             2 => '🂲',
             3 => '🂳',
             4 => '🂴',
@@ -40,7 +40,7 @@ class CardGraphic extends Card
             13 => '🂾',
         ],
         '♦️' => [
-            1 => '🃁',
+            14 => '🃁',
             2 => '🃂',
             3 => '🃃',
             4 => '🃄',
@@ -55,7 +55,7 @@ class CardGraphic extends Card
             13 => '🃎',
         ],
         '♣️' => [
-            1 => '🃑',
+            14 => '🃑',
             2 => '🃒',
             3 => '🃓',
             4 => '🃔',
