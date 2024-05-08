@@ -6,7 +6,13 @@ use App\Card\DeckOfCards;
 
 class Game 
 {
+    /**
+     * @var CardHand $player
+     */
     private $player;
+    /**
+     * @var CardHand $dealer
+     */
     private $dealer;
     private bool $playersTurn;
 
@@ -39,7 +45,7 @@ class Game
 
     public function newGame(): DeckOfCards
     {
-        $deck = new Deck();
+        $deck = new DeckOfCards();
         $deck->shuffle();
         $this->player = new CardHand();
         $this->dealer = new CardHand();
@@ -53,24 +59,24 @@ class Game
 
     public function hit(DeckOfCards $deck): void
     {
-        $this->player()->addCard($deck->drawCard());
+        $this->player->addCard($deck->drawCard());
     }
 
     public function stand(DeckOfCards $deck): string
     {
         $this->playersTurn = false;
-        this->dealersTurn($deck);
-        return this->winner();
+        $this->dealersTurn($deck);
+        return $this->winner();
     }
 
-    public function dealersTurn(DeckOfCards $deck)
+    public function dealersTurn(DeckOfCards $deck): void
     {
         while ($this->dealer->getHandValue() < 17) {
             $this->dealer->addCard($deck->drawCard());
         }
     }
     
-    public function isPlayersTurn()
+    public function isPlayersTurn(): bool
     {
         return $this->playersTurn;
     }
