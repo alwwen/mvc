@@ -7,7 +7,7 @@
     <p>Välkommen till kortspelet tjugoett.</p>
     <p>Detta spelet spelas i rundor. Ditt mål är att få värdet 21. Ess är antingen 14 eller 1.
         Huset vinner om ni har samma poäng eller om du skulle få högre värde på korten än 21.</p>
-    <form method="post" action="{{ path('game_init')}}">
+    <form method="post" action="{{ path('gameInit')}}">
         <input type="submit" name="do_it" value="Start Game!">
     </form>
 {% endblock %}

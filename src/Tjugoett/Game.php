@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Tjugoett;
+
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
 
-class Game 
+class Game
 {
     /**
      * @var CardHand $player
@@ -100,7 +101,7 @@ class Game
             $this->dealerValue = $this->dealer->getHandValue();
         }
     }
-    
+
     public function isPlayersTurn(): bool
     {
         return $this->playersTurn;

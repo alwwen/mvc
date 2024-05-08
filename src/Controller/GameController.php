@@ -23,27 +23,25 @@ class GameController extends AbstractController
         return $this->render('tjugoett/home.html.twig');
     }
 
-    #[Route("/game/init", name: "game_init")]
-    public function game_init(
+    #[Route("/game/init", name: "gameInit")]
+    public function gameInit(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = new Game();
         $deck = $game->newGame();
         $session->set('tjugoett', $game);
         $session->set('deck', $deck);
-        return $this->redirectToRoute('game_play');
+        return $this->redirectToRoute('gamePlay');
     }
 
-    #[Route("/game/play", name: "game_play")]
-    public function game_play(
+    #[Route("/game/play", name: "gamePlay")]
+    public function gamePlay(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = $session->get('tjugoett');
         $deck = $session->get('deck');
         if (!$game instanceof Game || !$deck instanceof DeckOfCards) {
-            return $this->redirectToRoute('game_init');
+            return $this->redirectToRoute('gameInit');
         }
         $winner = $game->winner();
         $data = [
@@ -54,38 +52,42 @@ class GameController extends AbstractController
         return $this->render('tjugoett/play.html.twig', $data);
     }
 
-    #[Route("/game/hit", name: "game_hit")]
-    public function game_hit(
+    #[Route("/game/hit", name: "gameHit")]
+    public function gameHit(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = $session->get('tjugoett');
         $deck = $session->get('deck');
         if (!$game instanceof Game || !$deck instanceof DeckOfCards) {
-            return $this->redirectToRoute('game_init');
+            return $this->redirectToRoute('gameInit');
         }
         $game->hit($deck);
         $session->set('tjugoett', $game);
         $session->set('deck', $deck);
         if ($game->getPlayerValue() > 21) {
-            return $this->redirectToRoute('game_stand');
+            return $this->redirectToRoute('gameStand');
         }
-        return $this->redirectToRoute('game_play');
+        return $this->redirectToRoute('gamePlay');
     }
 
-    #[Route("/game/stand", name: "game_stand")]
-    public function game_stand(
+    #[Route("/game/stand", name: "gameStand")]
+    public function gameStand(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = $session->get('tjugoett');
         $deck = $session->get('deck');
         if (!$game instanceof Game || !$deck instanceof DeckOfCards) {
-            return $this->redirectToRoute('game_init');
+            return $this->redirectToRoute('gameInit');
         }
         $game->stand($deck);
         $session->set('tjugoett', $game);
         $session->set('deck', $deck);
-        return $this->redirectToRoute('game_play');
+        return $this->redirectToRoute('gamePlay');
+    }
+
+    #[Route("/game/doc", name: "gameDoc")]
+    public function gameDoc(): Response
+    {
+        return $this->render('tjugoett/doc.html.twig');
     }
 }

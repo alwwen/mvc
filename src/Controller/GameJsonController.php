@@ -13,11 +13,10 @@ use App\Tjugoett\Game;
 
 class GameJsonController
 {
-    #[Route('/api/game', name: 'api_game', methods: ['GET'])]
-    public function api_game(
+    #[Route('/api/game', name: 'apiGame', methods: ['GET'])]
+    public function apiGame(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = $session->get('tjugoett');
         if (!$game instanceof Game) {
             return new JsonResponse([

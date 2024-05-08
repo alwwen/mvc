@@ -6,7 +6,7 @@
     <h1>Home Page for Tjugoett</h1>
     {% if not game.playersTurn %}
         <h3>The winner is {{winner}}</h3>
-        <form method="post" action="{{ path('game_init')}}">
+        <form method="post" action="{{ path('gameInit')}}">
             <input type="submit" name="do_it" value="Play Again">
         </form>
     {% endif %}
@@ -43,10 +43,10 @@
         </div>
     {% endif %}
     {% if game.playersTurn %}
-        <form method="post" action="{{ path('game_hit')}}">
+        <form method="post" action="{{ path('gameHit')}}">
             <input type="submit" name="do_it" value="Hit">
         </form>
-        <form method="post" action="{{ path('game_stand')}}">
+        <form method="post" action="{{ path('gameStand')}}">
             <input type="submit" name="do_it" value="Stand">
         </form>
     {% endif %}
