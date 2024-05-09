@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Dokumentation{% endblock %}
+
+{% block body %}
+    <h1>Dokumentation</h1>
+    <h2>Psuedokod</h2>
+    <p>När spelet startas så skapas en ny instans av Game klassen. Sen skapas ett nytt spel, då görs en ny kortlek, den blandas, kort dras åt spelaren och huset. Även spelarens och husest poäng sparas.</p>
+    <p>Innan vyn startas sparas spel klassen och kortleken i sessionen så de kan fortsätta användas senare.</p>
+    <p>Datan soom skickass med till twig filen är den hämtade datan av spelet, kortleken och vinnaren. Vinnaren skickas alltid med så ifall det inte är spelarens tur ska rätt vinnare visas.</p>
+    <p>När spelet väl startar visas de två korten för spelaren upp som de får i början och poängen de ger. Bara ena husets kort visas och poängen visas inte.</p>
+    <p>När man tar "Hit" för att få ett till kort så dras ett kort till och innan vyn visas igen kollas det om man har nått över 21 poäng. Ifall man gjort det kollas det om man har fått ett ess och gör isåfall att ess räknas som en poäng.
+        Är värdet över 21 så kör den samma funktion som att man skulle stand/stanna.
+    </p>
+    <p>När man trycker på stanna så drar huset/dealern kort tills den har 17 poäng eller mer. Då kallas en funktion som ser vem som vann och returnerar det.</p>
+    <p>Då stoppas spelet, visar vem som vunnit och en knapp kommer upp där man kan spela igen.</p>
+    <br><br>
+    <h2>Klasser</h2>
+    <h3>Card</h3>
+    <p>Klassens syfte är att hålla koll på kortet, dess värde och färg.</p>
+    <h3>Card Graphics</h3>
+    <p>Klassens syfte är att representera det card har som värde och färg i form av en karaktär av kortet.</p>
+    <h3>CardHand</h3>
+    <p>Klassens syfte är att ha koll på korten som en "spelare" har och hur mycket poäng handen är värd.</p>
+    <h3>DeckOfCards</h3>
+    <p>Klassens syfte är att ha 52 kort som kan dras utav för att de andra ska ha något att förhålla sig till.</p>
+    <h3>Game</h3>
+    <p>Denna klassen syfte är att ha koll på alla spelregler och sätta upp kortspelet tjugoett.</p>
+    <br><br>
+    <h2>Flödesschema</h2>
+    <img class="profile_picture" src="{{ asset('build/images/flowchart.png') }}" alt="flowchart">
+{% endblock %}
