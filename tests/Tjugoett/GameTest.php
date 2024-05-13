@@ -1,0 +1,175 @@
+<?php
+
+use App\Tjugoett\Game;
+use App\Card\CardHand;
+
+use PHPUnit\Framework\TestCase;
+
+
+/**
+ * Test cases for class Game.
+ */
+class TjugoettGameTest extends TestCase
+{
+    /**
+     * Test if constructor works correctly.
+     */
+    public function testCreateObject()
+    {
+        $game = new Game();
+        $this->assertInstanceOf("\App\Tjugoett\Game", $game);
+
+        $resPlayer = $game->getPlayer();
+        $this->assertInstanceOf("\App\Card\CardHand", $resPlayer);
+
+        $resDealer = $game->getDealer();
+        $this->assertInstanceOf("\App\Card\CardHand", $resDealer);
+    }
+
+    /**
+     * Test setPlayer()
+     */
+    public function testSetPlayer()
+    {
+        $game = new Game();
+        $player = new CardHand();
+        $game->setPlayer($player);
+
+        $res = $game->getPlayer();
+        $this->assertInstanceOf("\App\Card\CardHand", $res);
+        $this->assertEquals($player, $res);
+    }
+    /**
+     * Test setDealer()
+     */
+    public function testSetDealer()
+    {
+        $game = new Game();
+        $dealer = new CardHand();
+        $game->setDealer($dealer);
+
+        $res = $game->getDealer();
+        $this->assertInstanceOf("\App\Card\CardHand", $res);
+        $this->assertEquals($dealer, $res);
+    }
+
+    /**
+     * Test setPlayerValue() and getPlayerValue()
+     */
+    public function testPlayerValue()
+    {
+        $game = new Game();
+        $game->setPlayerValue(21);
+
+        $res = $game->getPlayerValue();
+        $this->assertEquals(21, $res);
+    }
+
+    /**
+     * Test setDealerValue() and getDealerValue()
+     */
+    public function testDealerValue()
+    {
+        $game = new Game();
+        $game->setDealerValue(21);
+
+        $res = $game->getDealerValue();
+        $this->assertEquals(21, $res);
+    }
+
+    /**
+     * Test newGame()
+     */
+    public function testNewGame()
+    {
+        $game = new Game();
+        $deck = $game->newGame();
+
+        $resPlayer = $game->getPlayer();
+        $this->assertInstanceOf("\App\Card\CardHand", $resPlayer);
+
+        $resDealer = $game->getDealer();
+        $this->assertInstanceOf("\App\Card\CardHand", $resDealer);
+
+        $this->assertInstanceOf("\App\Card\DeckOfCards", $deck);
+    }
+
+    /**
+     * Test hit()
+     */
+    public function testHit()
+    {
+        $game = new Game();
+        $deck = $game->newGame();
+        $game->hit($deck);
+
+        
+        $this->assertCount(3, $game->getPlayer()->getCards());
+    }
+
+    /**
+     * Test stand()
+     */
+    public function testStand()
+    {
+        $game = new Game();
+        $deck = $game->newGame();
+        $game->stand($deck);
+
+        $this->assertEquals(false, $game->isPlayersTurn());
+    }
+    /**
+     * test winner when players turn
+     */
+    public function testWinnerPlayersTurn()
+    {
+        $game = new Game();
+        $deck = $game->newGame();
+        $res = $game->winner();
+        $this->assertEquals("No winner yet.", $res);
+    }
+
+    /**
+     * test winner when dealer win
+     */
+    public function testWinnerDealerWin()
+    {
+        // $game = new Game();
+        // $deck = $game->newGame();
+        // $game->stand($deck);
+        // $res = $game->winner();
+        $player = $this->createMock(CardHand::class);
+        $player->method('getHandValue')
+            ->willReturn(20);
+        $dealer = $this->createMock(CardHand::class);
+        $dealer->method('getHandValue')
+            ->willReturn(21);
+        $game = new Game();
+        $deck = $game->newGame();
+        $game->setPlayer(clone $player);
+        $game->setDealer(clone $dealer);
+        $game->stand($deck);
+        $res = $game->winner();
+        $this->assertEquals("Dealer", $res);
+    }
+
+    /**
+     * test winner when player win
+     */
+    public function testWinnerPlayerWin()
+    {
+        $player = $this->createMock(CardHand::class);
+        $player->method('getHandValue')
+            ->willReturn(21);
+        $dealer = $this->createMock(CardHand::class);
+        $dealer->method('getHandValue')
+            ->willReturn(20);
+        $game = new Game();
+        $deck = $game->newGame();
+        $game->setPlayer(clone $player);
+        $game->setDealer(clone $dealer);
+        $game->stand($deck);
+        $res = $game->winner();
+        $this->assertEquals("Player", $res);
+    }
+}
