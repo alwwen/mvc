@@ -13,7 +13,7 @@ class CardTest extends TestCase
     /**
      * Construct object and verify it it a Card object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $card = new Card();
         $this->assertInstanceOf("\App\Card\Card", $card);
@@ -23,13 +23,13 @@ class CardTest extends TestCase
         $resSuit = $card->getSuit();
         $expSuit = "";
         $this->assertEquals($expValue, $resValue);
-        $this->assertEquals($expValue, $resValue);
+        $this->assertEquals($expSuit, $resSuit);
     }
 
     /**
      * Set value and suit and assert they are correct.
      */
-    public function testSetters()
+    public function testSetters(): void
     {
         $card = new Card();
         $card->setValue(10);
@@ -46,7 +46,7 @@ class CardTest extends TestCase
     /**
      * Test getAsString method.
      */
-    public function testGetAsString()
+    public function testGetAsString(): void
     {
         $card = new Card();
         $card->setValue(10);

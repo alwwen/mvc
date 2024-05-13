@@ -15,7 +15,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Construct object and verify it it a DeckOfCards object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $deck = new DeckOfCards();
         $this->assertInstanceOf("\App\Card\DeckOfCards", $deck);
@@ -24,7 +24,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Check getDeck() returns an array with 52 cards.
      */
-    public function testGetDeck()
+    public function testGetDeck(): void
     {
         $deck = new DeckOfCards();
         $res = $deck->getDeck();
@@ -34,7 +34,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Check shuffle() returns an array with 52 cards and is not sorted.
      */
-    public function testShuffle()
+    public function testShuffle(): void
     {
         $deckSorted = new DeckOfCards();
         $deckShuffled = new DeckOfCards();
@@ -46,7 +46,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Check drawCard() returns a card and the deck has 51 cards.
      */
-    public function testDrawCard()
+    public function testDrawCard(): void
     {
         $deck = new DeckOfCards();
         $res = $deck->drawCard();
@@ -57,7 +57,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Check drawCard() if the deck is empty.
      */
-    public function testDrawCardEmptyDeck()
+    public function testDrawCardEmptyDeck(): void
     {
         $deck = new DeckOfCards();
         for ($i = 0; $i < 52; $i++) {
@@ -72,7 +72,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Check if sort works.
      */
-    public function testSort()
+    public function testSort(): void
     {
         $deck = new DeckOfCards();
         $deck->shuffle();
@@ -88,7 +88,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Test if drawCards works correctly.
      */
-    public function testDrawCards()
+    public function testDrawCards(): void
     {
         $deck = new DeckOfCards();
         $res = $deck->drawCards(5);
@@ -99,7 +99,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Test deck size is correct after drawing 3 cards
      */
-    public function testDrawCardsDeckSize()
+    public function testDrawCardsDeckSize(): void
     {
         $deck = new DeckOfCards();
         $deck->drawCards(3);

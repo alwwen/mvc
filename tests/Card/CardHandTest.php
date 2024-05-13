@@ -13,7 +13,7 @@ class CardHandTest extends TestCase
     /**
      * Construct object and verify it it a Card object.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $hand = new CardHand();
         $this->assertInstanceOf("\App\Card\CardHand", $hand);
@@ -26,7 +26,7 @@ class CardHandTest extends TestCase
     /**
      * Add a card to the hand and verify it is added.
      */
-    public function testAddCard()
+    public function testAddCard(): void
     {
         $hand = new CardHand();
         $card = new Card();
@@ -42,7 +42,7 @@ class CardHandTest extends TestCase
     /**
      * Add 3 cards and check that the value is correct without it being over 21 points with an ace.
      */
-    public function testGetHandValue()
+    public function testGetHandValue(): void
     {
         $hand = new CardHand();
         $card1 = new Card();
@@ -66,7 +66,7 @@ class CardHandTest extends TestCase
     /**
      * Add 3 cards and check that the value is correct with an ace if value is over 21.
      */
-    public function testGetHandValueWithAce()
+    public function testGetHandValueWithAce(): void
     {
         $hand = new CardHand();
         $card1 = new Card();

@@ -14,7 +14,7 @@ class TjugoettGameTest extends TestCase
     /**
      * Test if constructor works correctly.
      */
-    public function testCreateObject()
+    public function testCreateObject(): void
     {
         $game = new Game();
         $this->assertInstanceOf("\App\Tjugoett\Game", $game);
@@ -29,7 +29,7 @@ class TjugoettGameTest extends TestCase
     /**
      * Test setPlayer()
      */
-    public function testSetPlayer()
+    public function testSetPlayer(): void
     {
         $game = new Game();
         $player = new CardHand();
@@ -42,7 +42,7 @@ class TjugoettGameTest extends TestCase
     /**
      * Test setDealer()
      */
-    public function testSetDealer()
+    public function testSetDealer(): void
     {
         $game = new Game();
         $dealer = new CardHand();
@@ -56,7 +56,7 @@ class TjugoettGameTest extends TestCase
     /**
      * Test setPlayerValue() and getPlayerValue()
      */
-    public function testPlayerValue()
+    public function testPlayerValue(): void
     {
         $game = new Game();
         $game->setPlayerValue(21);
@@ -68,7 +68,7 @@ class TjugoettGameTest extends TestCase
     /**
      * Test setDealerValue() and getDealerValue()
      */
-    public function testDealerValue()
+    public function testDealerValue(): void
     {
         $game = new Game();
         $game->setDealerValue(21);
@@ -78,9 +78,9 @@ class TjugoettGameTest extends TestCase
     }
 
     /**
-     * Test newGame()
+     * Test newGame() and no winner yet.
      */
-    public function testNewGame()
+    public function testNewGame(): void
     {
         $game = new Game();
         $deck = $game->newGame();
@@ -92,12 +92,15 @@ class TjugoettGameTest extends TestCase
         $this->assertInstanceOf("\App\Card\CardHand", $resDealer);
 
         $this->assertInstanceOf("\App\Card\DeckOfCards", $deck);
+
+        $res = $game->winner();
+        $this->assertEquals("No winner yet.", $res);
     }
 
     /**
-     * Test hit()
+     * Test hit().
      */
-    public function testHit()
+    public function testHit(): void
     {
         $game = new Game();
         $deck = $game->newGame();
@@ -108,9 +111,9 @@ class TjugoettGameTest extends TestCase
     }
 
     /**
-     * Test stand()
+     * Test stand().
      */
-    public function testStand()
+    public function testStand(): void
     {
         $game = new Game();
         $deck = $game->newGame();
@@ -118,21 +121,11 @@ class TjugoettGameTest extends TestCase
 
         $this->assertEquals(false, $game->isPlayersTurn());
     }
-    /**
-     * test winner when players turn
-     */
-    public function testWinnerPlayersTurn()
-    {
-        $game = new Game();
-        $deck = $game->newGame();
-        $res = $game->winner();
-        $this->assertEquals("No winner yet.", $res);
-    }
 
     /**
      * test winner when dealer win
      */
-    public function testWinnerDealerWin()
+    public function testWinnerDealerWin(): void
     {
         // $game = new Game();
         // $deck = $game->newGame();
@@ -156,7 +149,7 @@ class TjugoettGameTest extends TestCase
     /**
      * test winner when player win
      */
-    public function testWinnerPlayerWin()
+    public function testWinnerPlayerWin(): void
     {
         $player = $this->createMock(CardHand::class);
         $player->method('getHandValue')
