@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Single book Page{% endblock %}
+
+{% block body %}
+    <h1>Single book Page</h1>
+    <h3>Info om {{book.getTitle|e}}.</h3>
+    <p>Titel: {{book.getTitle|e}}</p>
+    <p>Författare: {{book.getAuthor|e}}</p>
+    <p>ISBN: {{book.getIsbn|e}}</p>
+    <img class="profile_picture" src="{{ asset('build/images/' ~ book.getImage|e) }}" alt="">
+    <form action="{{ path('book_delete_by_id', {'id': book.getId}) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this book?');">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit">Delete Book</button>
+    </form>
+{% endblock %}
