@@ -37,7 +37,7 @@
                     <td>{{ route }}</td>
                     <td>{{ data.description }}</td>
                     <td>
-                        <form action="{{ path(data.buttonRoute, {'number': '3'}) }}" method="post">
+                        <form action="{{ path(data.buttonRoute, {'number': data.field, 'isbn': data.field}) }}" method="post">
                             <button type="submit">Click me :D</button>
                         </form>
                     </td>

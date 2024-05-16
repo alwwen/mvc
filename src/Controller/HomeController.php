@@ -55,7 +55,12 @@ class HomeController extends AbstractController
                 'api/deck/draw/{number}' => [
                     'description' => "Draw a number of cards from the deck. 3 for now when showing",
                     'buttonRoute' => "apiDrawCards",
-                    'field' => "number",
+                    'field' => "3",
+                ],
+                'api/library/book/{isbn}' => [
+                    'description' => "Show the book with the given ISBN. ISBN is 9789174994711 for Divergent",
+                    'buttonRoute' => "apiBookByIsbn",
+                    'field' => '9789174994711',
                 ],
             ],
         ];
