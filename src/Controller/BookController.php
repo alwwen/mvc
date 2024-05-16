@@ -21,29 +21,6 @@ class BookController extends AbstractController
         ]);
     }
 
-    #[Route('/book/create', name: 'book_create')]
-    public function createBook(
-        ManagerRegistry $doctrine
-    ): Response 
-    {
-        $entityManager = $doctrine->getManager();
-
-        $book = new Book();
-        $book->setTitle("Divergent");
-        $book->setIsbn(9789174994711);
-        $book->setAuthor("Veronica Roth");
-        $book->setImage('divergent.webp');
-
-        // tell Doctrine you want to (eventually) save the Book
-        // (no queries yet)
-        $entityManager->persist($book);
-
-        // actually executes the queries (i.e. the INSERT query)
-        $entityManager->flush();
-
-        return new Response('Saved new book with id '.$book->getId());
-    }
-
     #[Route('/library', name: 'book_show_all')]
     public function showAllBook(
         BookRepository $bookRepository
@@ -109,9 +86,9 @@ class BookController extends AbstractController
         }
 
         if ($request->isMethod('POST')) {
-            $book->setTitle($request->request->get('title'));
-            $book->setAuthor($request->request->get('author'));
-            $book->setIsbn($request->request->get('isbn'));
+            $book->setTitle(strval($request->request->get('title')));
+            $book->setAuthor(strval($request->request->get('author')));
+            $book->setIsbn(strval($request->request->get('isbn')));
 
             $entityManager->flush();
 
@@ -132,9 +109,9 @@ class BookController extends AbstractController
             $entityManager = $doctrine->getManager();
 
             $book = new Book();
-            $book->setTitle($request->request->get('title'));
-            $book->setAuthor($request->request->get('author'));
-            $book->setIsbn($request->request->get('isbn'));
+            $book->setTitle(strval($request->request->get('title')));
+            $book->setAuthor(strval($request->request->get('author')));
+            $book->setIsbn(strval($request->request->get('isbn')));
             $book->setImage("placeholder_book.jpg");
 
             // tell Doctrine you want to (eventually) save the Book

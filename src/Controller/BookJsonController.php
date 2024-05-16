@@ -38,7 +38,7 @@ class BookJsonController extends AbstractController
     #[Route('/api/library/book/{isbn}', name: 'apiBookByIsbn', methods: ['GET', 'POST'])]
     public function apiBookByIsbn(
         BookRepository $bookRepository,
-        $isbn,
+        string $isbn,
         Request $request
     ): Response {
         $book = $bookRepository->findOneBy(['isbn' => $isbn]);
