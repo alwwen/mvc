@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1715848889">
-  <project timestamp="1715848889">
+<coverage generated="1716297670">
+  <project timestamp="1716297670">
     <file name="/home/alexanderw/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="6" methods="6" coveredmethods="6" conditionals="0" coveredconditionals="0" statements="7" coveredstatements="7" elements="13" coveredelements="13"/>
@@ -43,9 +43,9 @@
       <line num="28" type="stmt" count="7"/>
       <line num="29" type="stmt" count="7"/>
       <line num="31" type="stmt" count="7"/>
-      <line num="32" type="stmt" count="2"/>
-      <line num="33" type="stmt" count="2"/>
-      <line num="34" type="stmt" count="1"/>
+      <line num="32" type="stmt" count="3"/>
+      <line num="33" type="stmt" count="3"/>
+      <line num="34" type="stmt" count="3"/>
       <line num="38" type="stmt" count="7"/>
       <metrics loc="41" ncloc="35" classes="1" methods="3" coveredmethods="3" conditionals="0" coveredconditionals="0" statements="10" coveredstatements="10" elements="13" coveredelements="13"/>
     </file>
@@ -648,7 +648,7 @@
     </file>
     <file name="/home/alexanderw/dbwebb-kurser/mvc/me/report/src/Tjugoett/Game.php">
       <class name="App\Tjugoett\Game" namespace="global">
-        <metrics complexity="20" methods="15" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="38" elements="53" coveredelements="53"/>
+        <metrics complexity="20" methods="15" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="36" elements="53" coveredelements="50"/>
       </class>
       <line num="22" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="10"/>
       <line num="24" type="stmt" count="10"/>
@@ -689,10 +689,10 @@
       <line num="91" type="method" name="stand" visibility="public" complexity="1" crap="1" count="3"/>
       <line num="93" type="stmt" count="3"/>
       <line num="94" type="stmt" count="3"/>
-      <line num="97" type="method" name="dealersTurn" visibility="public" complexity="2" crap="2" count="3"/>
+      <line num="97" type="method" name="dealersTurn" visibility="public" complexity="2" crap="3.19" count="3"/>
       <line num="99" type="stmt" count="3"/>
-      <line num="100" type="stmt" count="1"/>
-      <line num="101" type="stmt" count="1"/>
+      <line num="100" type="stmt" count="0"/>
+      <line num="101" type="stmt" count="0"/>
       <line num="105" type="method" name="isPlayersTurn" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="107" type="stmt" count="1"/>
       <line num="110" type="method" name="winner" visibility="public" complexity="5" crap="5" count="3"/>
@@ -703,8 +703,8 @@
       <line num="117" type="stmt" count="2"/>
       <line num="118" type="stmt" count="1"/>
       <line num="120" type="stmt" count="1"/>
-      <metrics loc="124" ncloc="118" classes="1" methods="15" coveredmethods="15" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="38" elements="53" coveredelements="53"/>
+      <metrics loc="124" ncloc="118" classes="1" methods="15" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="38" coveredstatements="36" elements="53" coveredelements="50"/>
     </file>
-    <metrics files="20" loc="1520" ncloc="1368" classes="19" methods="95" coveredmethods="33" conditionals="0" coveredconditionals="0" statements="489" coveredstatements="75" elements="584" coveredelements="108"/>
+    <metrics files="20" loc="1520" ncloc="1368" classes="19" methods="95" coveredmethods="32" conditionals="0" coveredconditionals="0" statements="489" coveredstatements="73" elements="584" coveredelements="105"/>
   </project>
 </coverage>
