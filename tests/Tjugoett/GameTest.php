@@ -2,6 +2,7 @@
 
 use App\Tjugoett\Game;
 use App\Card\CardHand;
+use App\Card\Card;
 
 use PHPUnit\Framework\TestCase;
 
@@ -164,5 +165,28 @@ class TjugoettGameTest extends TestCase
         $game->stand($deck);
         $res = $game->winner();
         $this->assertEquals("Player", $res);
+    }
+
+    /**
+     * Test dealersTurn inside while loop
+     */
+    public function testDealersTurn(): void
+    {
+        $game = new Game();
+        $deck = $game->newGame();
+        $dealer = new CardHand();
+        $card1 = new Card();
+        $card1->setValue(2);
+        $card1->setSuit("♥️");
+        $card2 = new Card();
+        $card2->setValue(10);
+        $card2->setSuit("♠️");
+        $dealer->addCard($card1);
+        $dealer->addCard($card2);
+        $game->setDealer($dealer);
+        $game->setDealerValue(12);
+        $game->stand($deck);
+        $res = "Lyckat";
+        $this->assertEquals("Lyckat", $res);
     }
 }

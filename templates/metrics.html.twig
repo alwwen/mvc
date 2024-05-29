@@ -6,19 +6,73 @@
     <h1>Metrics</h1>
     <h2>Introduktion</h2>
     <p>
-        Hej
+        Codestyle påverkar koden genom att hålla en gemensam standard för hur koden ska se ut. Då blir koden mer lättläst och lätt följd av andra som ska kolla på koden som tidigare inte har kollat på den.
+        Coverage är hur mycket av koden som faktiskt är testad. Om man har hög coverage är det bra för om man gör ändringar i koden då så tar testarna upp allt man gjort och kollar så allt fortfarande fungerar.
+        <br>
+        <img class="profile_picture" src="{{ asset('build/images/coverage_before.png') }}" alt="">
+        <br>
+        Här är ett exempel på min coverage. De klasserna som jag använder för funktionalitet i kortspelet i koden är testade men inte controllersen. Väldigt mycket kod ligger i controllersen vilket gör att det ser 
+        ut som att jag har väldigt låg coverage. Det visar att om jag ändrar i controllersen så kommer det inte märkas ifall något är fel innan jag har testat alla utfall själv och vet att den har kört varje kodrad.
+        Complexity är hur komplex koden är. Man vill helst ha låg kompliexitet då koden blir mer förståelig när någon annan läser den eller när du kommer tillbaka senare.
+        Cohesion är när saker i klass hör ihop starkt mellan varandra så om koden ändras så ändras allt samtidigt. Så hög cohesion är bra för att underhålla koden.
+        Coupling är när klassers beroende av varandra. Om man har ett litet system kan man ha hög coupling mellan två klasser men så fprt systemet blir större vill man ha låg coupling för att kunna ändra/fixa en klass och inte behöva fixa resten av system på grund av den klassen.
     </p>
     <h2>Phpmetrics</h2>
     <p>
-        Hej
+        Jag väljer att kolla på phpmetrics sida och leta efter bilden med complexity och maintainability. Cirklarna respresenteras med storlek och färg. Ju större de är desto mer komplexa är filerna och färgen representerar hur underhållbar koden är.
+        Så det sämsta är stora röda cirklar och det bästa är små gröna cirklar. Jag har 3 ganska stora röda cirklar som är flaskhalsar.
+        <br>
+        <img class="profile_picture" src="{{ asset('build/images/phpmetrics_before.png') }}" alt="">
+        <br>
+        Den största är DiceGameController och det är för att mycket av koden hur spelet fungerar ligger i controllersen. Det är inte bra då det är svårt att testa och det är svårt att ändra i koden utan att bryta något.
+        Under här listar jag de tre största röda cirklarna och vad deras värden är.
+    </p>
+    <br>
+    <table>
+        <tr>
+            <td>Class</td>
+            <td>Complexity</td>
+            <td>Maintainability</td>
+        </tr>
+        <tr>
+            <td>DiceGameController</td>
+            <td>11</td>
+            <td>54.24</td>
+        </tr>
+        <tr>
+            <td>GameController</td>
+            <td>8</td>
+            <td>63.87</td>
+        </tr>
+        <tr>
+            <td>Game</td>
+            <td>6</td>
+            <td>55.91</td>
+        </tr>
+    </table>
+    <br>
+    <p>För kompliexiteten så vill man ha så lagt värde som möjligt alltså 1. För underhållningen vill man ha så högt värde som möjligt där max är 100.
+        Eftersom speciellt är min maintainability låg så ska de upp på minst 75% för att det ska vara bra. Complexity ska också försökas ta ner på alla fronter.
     </p>
     <h2>Scrutinizer</h2>
+    <a href="https://scrutinizer-ci.com/g/alwwen/mvc/?branch=main"><img src="https://scrutinizer-ci.com/g/alwwen/mvc/badges/quality-score.png?b=main" alt=""></a>
+    <a href="https://scrutinizer-ci.com/g/alwwen/mvc/?branch=main"><img src="https://scrutinizer-ci.com/g/alwwen/mvc/badges/coverage.png?b=main" alt=""></a>
+    <a href="https://scrutinizer-ci.com/g/alwwen/mvc/inspections/7c28b970-fbb5-460a-8438-ecd6dcdf3f8b/log"><img src="https://scrutinizer-ci.com/g/alwwen/mvc/badges/build.png?b=main" alt=""></a>
     <p>
-        Hej
+        Jag har inte så mycket fel i min scrutanizer. Min kod får en tia i betyg och har endast 1 issue jag kan fixa för det andra i kernel.
+        Annars tänker jag fokusera på min coverage då den endast är på 18%. Eftersom jag har rätt så låg coverage är det det en ganska stor flaskhals. 
+        Det är ju en av de 6C som har den största flaskhalsen så det är ju ett stort problem.
     </p>
     <h2>Förbättringar</h2>
+    <h3>Vad som ska förbättras</h3>
     <p>
-        Hej
+        Jag ska förbättra min coverage på testerna excluderande kontrollrarna. Så jag kommer göra uträkning för hur många procent den täcker om man räknar bort det sen. Det kommer jag göra genom att skriva tester för Dice klassen. Det är den 
+        klassen som inte har blivit testad alls. Repositoty setts upp när vi gör databsen samma med entity så har inte ändrat ngågot där själv så inga tester där.
+    </p>
+    <p>Sedan ska jag också minska min complexity och öka min maintainability på DiceGameController, GameController och Game. Så jag ska flytta kod från kontrollrarna till klasserna och skriva mer kommenterar på vad varje funktion gör.</p>
+    <h3>Resultat förbättringar</h3>
+    <p>
+        Hejsan
     </p>
     <h2>Diskussion</h2>
     <p>
