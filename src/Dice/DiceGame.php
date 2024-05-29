@@ -4,6 +4,7 @@ namespace App\Dice;
 use App\Dice\DiceHand;
 use App\Dice\DiceGraphic;
 use App\Dice\Dice;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 /**
  * A class for the game Pig.
@@ -23,18 +24,10 @@ class DiceGame
             if ($value === 1) {
                 $round = 0;
                 $roundTotal = 0;
-                $this->addFlash(
-                    'warning',
-                    'You got a 1 and you lost the round points!'
-                );
                 return $round;
             }
             $round += $value;
         }
-        $this->addFlash(
-            'notice',
-            'Your round was saved to the total!'
-        );
         return $round;
     }
 
@@ -58,7 +51,7 @@ class DiceGame
      */
     public function createHandTest(int $numDice): DiceHand {
         $hand = new DiceHand();
-        for ($i = 1; $i <= $num; $i++) {
+        for ($i = 1; $i <= $numDice; $i++) {
             $diceType = ($i % 2 === 1) ? new DiceGraphic() : new Dice();
             $hand->add($diceType);
         }
