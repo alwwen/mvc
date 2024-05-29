@@ -60,22 +60,80 @@
     <a href="https://scrutinizer-ci.com/g/alwwen/mvc/inspections/7c28b970-fbb5-460a-8438-ecd6dcdf3f8b/log"><img src="https://scrutinizer-ci.com/g/alwwen/mvc/badges/build.png?b=main" alt=""></a>
     <p>
         Jag har inte så mycket fel i min scrutanizer. Min kod får en tia i betyg och har endast 1 issue jag kan fixa för det andra i kernel.
-        Annars tänker jag fokusera på min coverage då den endast är på 18%. Eftersom jag har rätt så låg coverage är det det en ganska stor flaskhals. 
-        Det är ju en av de 6C som har den största flaskhalsen så det är ju ett stort problem.
+        Min coverage ser ganska dålig ut men det är för att det ligger så mycket total kod i alla mina controllers. Räknar jag bara på klasserna som tar hand som sakerna så är det totalt 
+        118 rader kod. Av dessa 118 rader kod så är 43 inte testade för de ligger i Dice klasserna. Så min coverage inräknat med Dice är ~64%.
     </p>
     <h2>Förbättringar</h2>
     <h3>Vad som ska förbättras</h3>
-    <p>
-        Jag ska förbättra min coverage på testerna excluderande kontrollrarna. Så jag kommer göra uträkning för hur många procent den täcker om man räknar bort det sen. Det kommer jag göra genom att skriva tester för Dice klassen. Det är den 
-        klassen som inte har blivit testad alls. Repositoty setts upp när vi gör databsen samma med entity så har inte ändrat ngågot där själv så inga tester där.
-    </p>
-    <p>Sedan ska jag också minska min complexity och öka min maintainability på DiceGameController, GameController och Game. Så jag ska flytta kod från kontrollrarna till klasserna och skriva mer kommenterar på vad varje funktion gör.</p>
+    <p>Jag ska jag också minska min complexity och öka min maintainability på DiceGameController, GameController och Game. Så jag ska flytta kod från kontrollrarna till klasserna och skriva mer kommenterar på vad varje funktion gör.</p>
     <h3>Resultat förbättringar</h3>
+    <img class="profile_picture" src="{{ asset('build/images/phpmetrics_after.png') }}" alt="">
+    <p>Innan</p>
+    <table>
+        <tr>
+            <td>Class</td>
+            <td>Complexity</td>
+            <td>Maintainability</td>
+        </tr>
+        <tr>
+            <td>DiceGameController</td>
+            <td>11</td>
+            <td>54.24</td>
+        </tr>
+        <tr>
+            <td>GameController</td>
+            <td>8</td>
+            <td>63.87</td>
+        </tr>
+        <tr>
+            <td>Game</td>
+            <td>6</td>
+            <td>55.91</td>
+        </tr>
+    </table>
+    <p>Efter</p>
+    <table>
+        <tr>
+            <td>Class</td>
+            <td>Complexity</td>
+            <td>Maintainability</td>
+        </tr>
+        <tr>
+            <td>DiceGameController</td>
+            <td>5</td>
+            <td>77.89</td>
+        </tr>
+        <tr>
+            <td>GameController</td>
+            <td>8</td>
+            <td>82.19</td>
+        </tr>
+        <tr>
+            <td>Game</td>
+            <td>6</td>
+            <td>79.57</td>
+        </tr>
+    </table>
     <p>
-        Hejsan
+        Jag fick upp allas maintainability till över 75% genom att flytta kod till andra klasser och skriver kommentarer med phpdoc på alla funktioner.
+        Det gjorde väldigt mycket för då ser man vad som kommer in och vad allt betyder och vad som ska returneras.
+        Med complexity så jobbade jag mycket med just DiceGameController för att få ner dens complexity. Den fick jag ju också ner från 11 till 5. Det gjorde 
+        jag genom att flytta ut mycket kod till en DiceGame klass. Det gjorde att jag fick bort mycket kod men också att jag fick in mer kommentarer om vad som händer.
     </p>
     <h2>Diskussion</h2>
     <p>
-        Hej
+        Ja det kan man göra. Att göra tester under tiden du utvecklar är viktigt för då vet du om det fungerar och om du lägger på saker som ska funka med det gamla så vet du om du lägger till saker om det gamla fortfarande fungerar eller inte.'
+        Också att tänka på mycket med kommentarer och att skriva kod på samma sätt hela tiden gör den mer läsbar så du och andra lättare kan byggare vidare på din kod.
+    </p>
+    <br>
+    <p>
+        Jag ser mest fördelar. Skapar bättre kod och möjligtheten att bygga vidare och att koden är robust blir mycket högre. Det som är negativt med det 
+        är att i början speciellt tar det mycket längre tid för en programmerare att vänja sig att göra allt detta istället för att bara skriva koden som den vill.
+        Sen kan det ju samtidigt sparra tid med att skriva tester, kommentarer och på samma sett. Just för att då hittar du fel lättare och så blir det 
+        lättare för någon annan att hjälpa dig med att faktiskt fixa din kod om den är lättläst.
+    </p>
+    <p>
+        Ja det gör jag ändå. Att använda verktyg för att alla ska formatera koden på samma sätt. Att alla ska använda snake-case etc. Det är ett bra sett att 
+        jobba mot en mer "clean code".
     </p>
 {% endblock %}
