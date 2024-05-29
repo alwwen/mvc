@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Dice;
+
 use App\Dice\DiceHand;
 use App\Dice\DiceGraphic;
 use App\Dice\Dice;
@@ -17,7 +18,8 @@ class DiceGame
      * @param int $roundTotal the total score for the round.
      * @return int the score for the round.
      */
-    public function calculateRoundScore(DiceHand $hand, int &$roundTotal): int {
+    public function calculateRoundScore(DiceHand $hand, int &$roundTotal): int
+    {
         $round = 0;
         $values = $hand->getValues();
         foreach ($values as $value) {
@@ -36,7 +38,8 @@ class DiceGame
      * @param int $numDice the number of dices to create.
      * @return DiceHand the hand of dices.
      */
-    public function createHand(int $numDice): DiceHand {
+    public function createHand(int $numDice): DiceHand
+    {
         $hand = new DiceHand();
         for ($i = 1; $i <= $numDice; $i++) {
             $hand->add(new DiceGraphic());
@@ -49,7 +52,8 @@ class DiceGame
      * @param int $numDice the number of dices to create.
      * @return DiceHand the hand of dices.
      */
-    public function createHandTest(int $numDice): DiceHand {
+    public function createHandTest(int $numDice): DiceHand
+    {
         $hand = new DiceHand();
         for ($i = 1; $i <= $numDice; $i++) {
             $diceType = ($i % 2 === 1) ? new DiceGraphic() : new Dice();
@@ -62,9 +66,9 @@ class DiceGame
      * Initiate the session for the game.
      * @param SessionInterface $session the session to initiate.
      * @param int $numDice the number of dices to create.
-     * @param DiceHand $hand the hand of dices.
      */
-    public function sessionInit($session, int $numDice): void {
+    public function sessionInit($session, int $numDice): void
+    {
         $hand = $this->createHand($numDice);
         $hand->roll();
         $session->set("pig_dicehand", $hand);

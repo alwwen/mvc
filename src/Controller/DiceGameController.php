@@ -109,7 +109,7 @@ class DiceGameController extends AbstractController
     ): Response {
         $numDice = $request->request->get('num_dices');
         $game = new DiceGame();
-        $game->sessionInit($session, $numDice);
+        $game->sessionInit($session, (int)$numDice);
 
         return $this->redirectToRoute('pig_play');
     }

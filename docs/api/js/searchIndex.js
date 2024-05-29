@@ -273,32 +273,32 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\DiceGameController",
             "name": "DiceGameController",
-            "summary": "",
+            "summary": "Controller\u0020for\u0020the\u0020game\u0020Pig.",
             "url": "classes/App-Controller-DiceGameController.html"
         },                {
             "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003Ahome\u0028\u0029",
             "name": "home",
-            "summary": "",
+            "summary": "Route\u0020for\u0020the\u0020home\u0020page\u0020of\u0020the\u0020game.",
             "url": "classes/App-Controller-DiceGameController.html#method_home"
         },                {
             "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003AtestRollDice\u0028\u0029",
             "name": "testRollDice",
-            "summary": "",
+            "summary": "Route\u0020for\u0020the\u0020test\u0020page\u0020of\u0020the\u0020game.",
             "url": "classes/App-Controller-DiceGameController.html#method_testRollDice"
         },                {
             "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003AtestRollDices\u0028\u0029",
             "name": "testRollDices",
-            "summary": "",
+            "summary": "Route\u0020for\u0020the\u0020test\u0020page\u0020of\u0020the\u0020game.",
             "url": "classes/App-Controller-DiceGameController.html#method_testRollDices"
         },                {
             "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003AtestDiceHand\u0028\u0029",
             "name": "testDiceHand",
-            "summary": "",
+            "summary": "Route\u0020for\u0020the\u0020test\u0020page\u0020of\u0020the\u0020game.",
             "url": "classes/App-Controller-DiceGameController.html#method_testDiceHand"
         },                {
             "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003Ainit\u0028\u0029",
             "name": "init",
-            "summary": "",
+            "summary": "Route\u0020to\u0020init\u0020the\u0020game.",
             "url": "classes/App-Controller-DiceGameController.html#method_init"
         },                {
             "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003AinitCallback\u0028\u0029",
@@ -308,52 +308,52 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003Aplay\u0028\u0029",
             "name": "play",
-            "summary": "",
+            "summary": "Route\u0020to\u0020play\u0020the\u0020game.",
             "url": "classes/App-Controller-DiceGameController.html#method_play"
         },                {
             "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003Aroll\u0028\u0029",
             "name": "roll",
-            "summary": "",
+            "summary": "Route\u0020to\u0020roll\u0020the\u0020dice\u0020in\u0020the\u0020hand.",
             "url": "classes/App-Controller-DiceGameController.html#method_roll"
         },                {
             "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003Asave\u0028\u0029",
             "name": "save",
-            "summary": "",
+            "summary": "Route\u0020to\u0020save\u0020the\u0020round\u0020points\u0020to\u0020the\u0020total\u0020points.",
             "url": "classes/App-Controller-DiceGameController.html#method_save"
         },                {
             "fqsen": "\\App\\Controller\\GameController",
             "name": "GameController",
-            "summary": "",
+            "summary": "Controller\u0020for\u0020the\u0020game\u002021.",
             "url": "classes/App-Controller-GameController.html"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003Agame\u0028\u0029",
             "name": "game",
-            "summary": "",
+            "summary": "Route\u0020for\u0020the\u0020home\u0020page\u0020of\u0020the\u0020game.",
             "url": "classes/App-Controller-GameController.html#method_game"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgameInit\u0028\u0029",
             "name": "gameInit",
-            "summary": "",
+            "summary": "Route\u0020for\u0020the\u0020init\u0020page\u0020of\u0020the\u0020game.",
             "url": "classes/App-Controller-GameController.html#method_gameInit"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgamePlay\u0028\u0029",
             "name": "gamePlay",
-            "summary": "",
+            "summary": "Route\u0020for\u0020the\u0020play\u0020page\u0020of\u0020the\u0020game.",
             "url": "classes/App-Controller-GameController.html#method_gamePlay"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgameHit\u0028\u0029",
             "name": "gameHit",
-            "summary": "",
+            "summary": "Route\u0020for\u0020the\u0020hit\u0020page\u0020of\u0020the\u0020game.",
             "url": "classes/App-Controller-GameController.html#method_gameHit"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgameStand\u0028\u0029",
             "name": "gameStand",
-            "summary": "",
+            "summary": "Route\u0020for\u0020the\u0020stand\u0020page\u0020of\u0020the\u0020game.",
             "url": "classes/App-Controller-GameController.html#method_gameStand"
         },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgameDoc\u0028\u0029",
             "name": "gameDoc",
-            "summary": "",
+            "summary": "Route\u0020for\u0020the\u0020reset\u0020page\u0020of\u0020the\u0020game.",
             "url": "classes/App-Controller-GameController.html#method_gameDoc"
         },                {
             "fqsen": "\\App\\Controller\\GameJsonController",
@@ -396,6 +396,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-HomeController.html#method_api"
         },                {
+            "fqsen": "\\App\\Controller\\MetricsController",
+            "name": "MetricsController",
+            "summary": "",
+            "url": "classes/App-Controller-MetricsController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\MetricsController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-MetricsController.html#method_metrics"
+        },                {
             "fqsen": "\\App\\Dice\\Dice",
             "name": "Dice",
             "summary": "",
@@ -425,6 +435,31 @@ Search.appendIndex(
             "name": "value",
             "summary": "",
             "url": "classes/App-Dice-Dice.html#property_value"
+        },                {
+            "fqsen": "\\App\\Dice\\DiceGame",
+            "name": "DiceGame",
+            "summary": "A\u0020class\u0020for\u0020the\u0020game\u0020Pig.",
+            "url": "classes/App-Dice-DiceGame.html"
+        },                {
+            "fqsen": "\\App\\Dice\\DiceGame\u003A\u003AcalculateRoundScore\u0028\u0029",
+            "name": "calculateRoundScore",
+            "summary": "Calculate\u0020the\u0020round\u0020score\u0020and\u0020set\u0020flash\u0020messages.",
+            "url": "classes/App-Dice-DiceGame.html#method_calculateRoundScore"
+        },                {
+            "fqsen": "\\App\\Dice\\DiceGame\u003A\u003AcreateHand\u0028\u0029",
+            "name": "createHand",
+            "summary": "Takes\u0020a\u0020hand\u0020and\u0020number\u0020of\u0020dices,\u0020create\u0020dice\u0020and\u0020add\u0020to\u0020hand.",
+            "url": "classes/App-Dice-DiceGame.html#method_createHand"
+        },                {
+            "fqsen": "\\App\\Dice\\DiceGame\u003A\u003AcreateHandTest\u0028\u0029",
+            "name": "createHandTest",
+            "summary": "Takes\u0020a\u0020hand\u0020and\u0020number\u0020of\u0020dices,\u0020create\u0020dice\u0020and\u0020add\u0020to\u0020hand.",
+            "url": "classes/App-Dice-DiceGame.html#method_createHandTest"
+        },                {
+            "fqsen": "\\App\\Dice\\DiceGame\u003A\u003AsessionInit\u0028\u0029",
+            "name": "sessionInit",
+            "summary": "Initiate\u0020the\u0020session\u0020for\u0020the\u0020game.",
+            "url": "classes/App-Dice-DiceGame.html#method_sessionInit"
         },                {
             "fqsen": "\\App\\Dice\\DiceGraphic",
             "name": "DiceGraphic",
@@ -573,82 +608,82 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Tjugoett\\Game",
             "name": "Game",
-            "summary": "",
+            "summary": "A\u0020class\u0020for\u0020the\u0020game\u002021.",
             "url": "classes/App-Tjugoett-Game.html"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "",
+            "summary": "Constructor\u0020to\u0020initiate\u0020the\u0020game\u0020with\u0020a\u0020player\u0020and\u0020a\u0020dealer.",
             "url": "classes/App-Tjugoett-Game.html#method___construct"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003AgetPlayer\u0028\u0029",
             "name": "getPlayer",
-            "summary": "",
+            "summary": "Get\u0020the\u0020player.",
             "url": "classes/App-Tjugoett-Game.html#method_getPlayer"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003AgetDealer\u0028\u0029",
             "name": "getDealer",
-            "summary": "",
+            "summary": "Get\u0020the\u0020dealer.",
             "url": "classes/App-Tjugoett-Game.html#method_getDealer"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003AsetPlayer\u0028\u0029",
             "name": "setPlayer",
-            "summary": "",
+            "summary": "Set\u0020the\u0020player.",
             "url": "classes/App-Tjugoett-Game.html#method_setPlayer"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003AsetDealer\u0028\u0029",
             "name": "setDealer",
-            "summary": "",
+            "summary": "Set\u0020the\u0020dealer.",
             "url": "classes/App-Tjugoett-Game.html#method_setDealer"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003AsetPlayerValue\u0028\u0029",
             "name": "setPlayerValue",
-            "summary": "",
+            "summary": "Set\u0020the\u0020player\u0020value.",
             "url": "classes/App-Tjugoett-Game.html#method_setPlayerValue"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003AsetDealerValue\u0028\u0029",
             "name": "setDealerValue",
-            "summary": "",
+            "summary": "Set\u0020the\u0020dealer\u0020value.",
             "url": "classes/App-Tjugoett-Game.html#method_setDealerValue"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003AgetPlayerValue\u0028\u0029",
             "name": "getPlayerValue",
-            "summary": "",
+            "summary": "Get\u0020the\u0020value\u0020of\u0020the\u0020player.",
             "url": "classes/App-Tjugoett-Game.html#method_getPlayerValue"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003AgetDealerValue\u0028\u0029",
             "name": "getDealerValue",
-            "summary": "",
+            "summary": "Get\u0020the\u0020value\u0020of\u0020the\u0020dealer.",
             "url": "classes/App-Tjugoett-Game.html#method_getDealerValue"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003AnewGame\u0028\u0029",
             "name": "newGame",
-            "summary": "",
+            "summary": "Start\u0020a\u0020new\u0020game.",
             "url": "classes/App-Tjugoett-Game.html#method_newGame"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003Ahit\u0028\u0029",
             "name": "hit",
-            "summary": "",
+            "summary": "Hit\u0020the\u0020player\u0020with\u0020a\u0020new\u0020card.",
             "url": "classes/App-Tjugoett-Game.html#method_hit"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003Astand\u0028\u0029",
             "name": "stand",
-            "summary": "",
+            "summary": "Stand\u0020with\u0020the\u0020player\u0020and\u0020let\u0020the\u0020dealer\u0020play.",
             "url": "classes/App-Tjugoett-Game.html#method_stand"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003AdealersTurn\u0028\u0029",
             "name": "dealersTurn",
-            "summary": "",
+            "summary": "Let\u0020the\u0020dealer\u0020play.",
             "url": "classes/App-Tjugoett-Game.html#method_dealersTurn"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003AisPlayersTurn\u0028\u0029",
             "name": "isPlayersTurn",
-            "summary": "",
+            "summary": "Check\u0020if\u0020it\u0020is\u0020the\u0020players\u0020turn.",
             "url": "classes/App-Tjugoett-Game.html#method_isPlayersTurn"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003Awinner\u0028\u0029",
             "name": "winner",
-            "summary": "",
+            "summary": "Check\u0020who\u0020is\u0020the\u0020winner\u0020of\u0020the\u0020game.",
             "url": "classes/App-Tjugoett-Game.html#method_winner"
         },                {
             "fqsen": "\\App\\Tjugoett\\Game\u003A\u003A\u0024player",

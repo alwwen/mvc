@@ -113,7 +113,6 @@ class GameController extends AbstractController
 
     /**
      * Route for the reset page of the game.
-     * @param SessionInterface $session The session interface.
      * @return Response Going to the play page of the game.
      */
     #[Route("/game/doc", name: "gameDoc")]

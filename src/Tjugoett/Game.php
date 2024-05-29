@@ -68,7 +68,7 @@ class Game
         $this->dealer = $dealer;
     }
 
-    /** 
+    /**
     * Set the player value.
     * @param int $playerValue The value of the player.
     */
