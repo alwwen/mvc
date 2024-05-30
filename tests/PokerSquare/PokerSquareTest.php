@@ -97,7 +97,7 @@ class PokerSquareTest extends TestCase
     {
         $pokerSquare = new PokerSquare();
         for ($i = 0; $i < 25; $i++) {
-            $pokerSquare->addCard($i % 5, floor($i / 5));
+            $pokerSquare->addCard($i % 5, (int)floor($i / 5));
         }
         $this->assertTrue($pokerSquare->gameDone());
     }

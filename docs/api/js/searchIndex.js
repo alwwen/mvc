@@ -128,8 +128,13 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetDeckSize\u0028\u0029",
             "name": "getDeckSize",
-            "summary": "",
+            "summary": "Function\u0020to\u0020get\u0020the\u0020size\u0020of\u0020the\u0020deck.",
             "url": "classes/App-Card-DeckOfCards.html#method_getDeckSize"
+        },                {
+            "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003ApeekTopCard\u0028\u0029",
+            "name": "peekTopCard",
+            "summary": "Function\u0020to\u0020look\u0020at\u0020the\u0020top\u0020card\u0020of\u0020the\u0020deck",
+            "url": "classes/App-Card-DeckOfCards.html#method_peekTopCard"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003A\u0024deck",
             "name": "deck",
@@ -406,6 +411,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-MetricsController.html#method_metrics"
         },                {
+            "fqsen": "\\App\\Controller\\PokerSquareController",
+            "name": "PokerSquareController",
+            "summary": "",
+            "url": "classes/App-Controller-PokerSquareController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\PokerSquareController\u003A\u003Aproj\u0028\u0029",
+            "name": "proj",
+            "summary": "",
+            "url": "classes/App-Controller-PokerSquareController.html#method_proj"
+        },                {
+            "fqsen": "\\App\\Controller\\PokerSquareController\u003A\u003AprojInit\u0028\u0029",
+            "name": "projInit",
+            "summary": "",
+            "url": "classes/App-Controller-PokerSquareController.html#method_projInit"
+        },                {
+            "fqsen": "\\App\\Controller\\PokerSquareController\u003A\u003AprojPlay\u0028\u0029",
+            "name": "projPlay",
+            "summary": "",
+            "url": "classes/App-Controller-PokerSquareController.html#method_projPlay"
+        },                {
+            "fqsen": "\\App\\Controller\\PokerSquareController\u003A\u003AaddCard\u0028\u0029",
+            "name": "addCard",
+            "summary": "",
+            "url": "classes/App-Controller-PokerSquareController.html#method_addCard"
+        },                {
             "fqsen": "\\App\\Dice\\Dice",
             "name": "Dice",
             "summary": "",
@@ -596,6 +626,131 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Kernel.html"
         },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare",
+            "name": "PokerSquare",
+            "summary": "A\u0020class\u0020for\u0020the\u0020game\u0020PokerSquare.",
+            "url": "classes/App-PokerSquare-PokerSquare.html"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor\u0020to\u0020initiate\u0020the\u0020game\u0020with\u0020a\u0020field\u0020of\u0020card\u0020hands.",
+            "url": "classes/App-PokerSquare-PokerSquare.html#method___construct"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003AgetField\u0028\u0029",
+            "name": "getField",
+            "summary": "Get\u0020the\u0020field.",
+            "url": "classes/App-PokerSquare-PokerSquare.html#method_getField"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003AgetScores\u0028\u0029",
+            "name": "getScores",
+            "summary": "Get\u0020the\u0020scores.",
+            "url": "classes/App-PokerSquare-PokerSquare.html#method_getScores"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003AgetTotalScores\u0028\u0029",
+            "name": "getTotalScores",
+            "summary": "Get\u0020total\u0020AP\u0020and\u0020BP\u0020Score.",
+            "url": "classes/App-PokerSquare-PokerSquare.html#method_getTotalScores"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003AaddCard\u0028\u0029",
+            "name": "addCard",
+            "summary": "Add\u0020a\u0020card\u0020to\u0020the\u0020field.",
+            "url": "classes/App-PokerSquare-PokerSquare.html#method_addCard"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003AcalculateScores\u0028\u0029",
+            "name": "calculateScores",
+            "summary": "Calculate\u0020scores\u0020for\u0020rows\u0020and\u0020columns.",
+            "url": "classes/App-PokerSquare-PokerSquare.html#method_calculateScores"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003AgameDone\u0028\u0029",
+            "name": "gameDone",
+            "summary": "Check\u0020if\u0020the\u0020game\u0020is\u0020done.",
+            "url": "classes/App-PokerSquare-PokerSquare.html#method_gameDone"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003AgetDeck\u0028\u0029",
+            "name": "getDeck",
+            "summary": "Get\u0020the\u0020deck.",
+            "url": "classes/App-PokerSquare-PokerSquare.html#method_getDeck"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003A\u0024field",
+            "name": "field",
+            "summary": "",
+            "url": "classes/App-PokerSquare-PokerSquare.html#property_field"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003A\u0024scores",
+            "name": "scores",
+            "summary": "",
+            "url": "classes/App-PokerSquare-PokerSquare.html#property_scores"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003A\u0024deck",
+            "name": "deck",
+            "summary": "",
+            "url": "classes/App-PokerSquare-PokerSquare.html#property_deck"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\PokerSquare\u003A\u003A\u0024rules",
+            "name": "rules",
+            "summary": "",
+            "url": "classes/App-PokerSquare-PokerSquare.html#property_rules"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules",
+            "name": "Rules",
+            "summary": "A\u0020class\u0020for\u0020the\u0020rules\u0020of\u0020PokerSquare.",
+            "url": "classes/App-PokerSquare-Rules.html"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules\u003A\u003AevaluateHand\u0028\u0029",
+            "name": "evaluateHand",
+            "summary": "Evaluate\u0020the\u0020hand\u0020presented\u0020and\u0020get\u0020the\u0020points.",
+            "url": "classes/App-PokerSquare-Rules.html#method_evaluateHand"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules\u003A\u003AisRoyalFlush\u0028\u0029",
+            "name": "isRoyalFlush",
+            "summary": "Check\u0020if\u0020the\u0020hand\u0020is\u0020a\u0020royal\u0020flush.",
+            "url": "classes/App-PokerSquare-Rules.html#method_isRoyalFlush"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules\u003A\u003AisStraightFlush\u0028\u0029",
+            "name": "isStraightFlush",
+            "summary": "Check\u0020if\u0020the\u0020hand\u0020is\u0020a\u0020straight\u0020flush.",
+            "url": "classes/App-PokerSquare-Rules.html#method_isStraightFlush"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules\u003A\u003AisFlush\u0028\u0029",
+            "name": "isFlush",
+            "summary": "Check\u0020if\u0020the\u0020hand\u0020is\u0020a\u0020flush.",
+            "url": "classes/App-PokerSquare-Rules.html#method_isFlush"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules\u003A\u003AisStraight\u0028\u0029",
+            "name": "isStraight",
+            "summary": "Check\u0020if\u0020the\u0020hand\u0020is\u0020a\u0020straight.",
+            "url": "classes/App-PokerSquare-Rules.html#method_isStraight"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules\u003A\u003AisFourOfAKind\u0028\u0029",
+            "name": "isFourOfAKind",
+            "summary": "Check\u0020if\u0020the\u0020hand\u0020is\u0020a\u0020four\u0020of\u0020a\u0020kind.",
+            "url": "classes/App-PokerSquare-Rules.html#method_isFourOfAKind"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules\u003A\u003AisFullHouse\u0028\u0029",
+            "name": "isFullHouse",
+            "summary": "Check\u0020if\u0020the\u0020hand\u0020is\u0020a\u0020full\u0020house.",
+            "url": "classes/App-PokerSquare-Rules.html#method_isFullHouse"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules\u003A\u003AisThreeOfAKind\u0028\u0029",
+            "name": "isThreeOfAKind",
+            "summary": "Check\u0020if\u0020the\u0020hand\u0020is\u0020a\u0020three\u0020of\u0020a\u0020kind.",
+            "url": "classes/App-PokerSquare-Rules.html#method_isThreeOfAKind"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules\u003A\u003AisTwoPairs\u0028\u0029",
+            "name": "isTwoPairs",
+            "summary": "Check\u0020if\u0020the\u0020hand\u0020is\u0020two\u0020pairs.",
+            "url": "classes/App-PokerSquare-Rules.html#method_isTwoPairs"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules\u003A\u003AisOnePair\u0028\u0029",
+            "name": "isOnePair",
+            "summary": "Check\u0020if\u0020the\u0020hand\u0020is\u0020one\u0020pair.",
+            "url": "classes/App-PokerSquare-Rules.html#method_isOnePair"
+        },                {
+            "fqsen": "\\App\\PokerSquare\\Rules\u003A\u003AHAND_SCORES",
+            "name": "HAND_SCORES",
+            "summary": "The\u0020scores\u0020for\u0020the\u0020different\u0020hands.",
+            "url": "classes/App-PokerSquare-Rules.html#constant_HAND_SCORES"
+        },                {
             "fqsen": "\\App\\Repository\\BookRepository",
             "name": "BookRepository",
             "summary": "",
@@ -740,6 +895,11 @@ Search.appendIndex(
             "name": "App",
             "summary": "",
             "url": "namespaces/app.html"
+        },                {
+            "fqsen": "\\App\\PokerSquare",
+            "name": "PokerSquare",
+            "summary": "",
+            "url": "namespaces/app-pokersquare.html"
         },                {
             "fqsen": "\\App\\Repository",
             "name": "Repository",

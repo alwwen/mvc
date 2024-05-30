@@ -23,18 +23,16 @@ class PokerSquareController extends AbstractController
     #[Route('/proj/init', name: 'projInit')]
     public function projInit(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = new PokerSquare();
         $session->set('pokersquare', $game);
         return $this->redirectToRoute('projPlay');
     }
-    
+
     #[Route('/proj/play', name: 'projPlay')]
     public function projPlay(
         SessionInterface $session
-    ): Response
-    {
+    ): Response {
         $game = $session->get('pokersquare');
         if (!$game instanceof PokerSquare) {
             return $this->redirectToRoute('projInit');
@@ -52,17 +50,17 @@ class PokerSquareController extends AbstractController
      */
     #[Route('/proj/addcard/{row}/{col}', name: 'add_card')]
     public function addCard(
-        int $row, 
+        int $row,
         int $col,
-        SessionInterface $session): Response
-    {
+        SessionInterface $session
+    ): Response {
 
         $game = $session->get('pokersquare');
         if (!$game instanceof PokerSquare) {
             return $this->redirectToRoute('projInit');
         }
         $game->addCard($row, $col);
-        
+
         return $this->redirectToRoute('projPlay');
     }
 }

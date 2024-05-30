@@ -3,6 +3,7 @@
 namespace App\PokerSquare;
 
 use App\Card\CardGraphic;
+use App\Card\Card;
 
 /**
  * A class for the rules of PokerSquare.
@@ -12,7 +13,7 @@ class Rules
     /**
      * The scores for the different hands.
      */
-    const HAND_SCORES = [
+    public const HAND_SCORES = [
         'Royal flush' => ['AP' => 100, 'BP' => 30],
         'Straight flush' => ['AP' => 75, 'BP' => 30],
         'Four of a kind' => ['AP' => 50, 'BP' => 16],
@@ -26,11 +27,12 @@ class Rules
 
     /**
      * Evaluate the hand presented and get the points.
-     * @param CardGraphic[] $hand The hand to evaluate.
+     * @param array<CardGraphic|Card|null> $hand The hand to evaluate.
+     * @return array<string, int> The points for the hand.
      */
     public function evaluateHand(array $hand): array
     {
-        if (in_array(NULL, $hand)) {
+        if (in_array(null, $hand)) {
             return ['AP' => 0, 'BP' => 0];
         } elseif ($this->isRoyalFlush($hand)) {
             return self::HAND_SCORES['Royal flush'];
@@ -55,6 +57,11 @@ class Rules
         return ['AP' => 0, 'BP' => 0];
     }
 
+    /**
+     * Check if the hand is a royal flush.
+     * @param array<CardGraphic|Card> $hand The hand to check.
+     * @return bool If the hand is a royal flush.
+     */
     public function isRoyalFlush(array $hand): bool
     {
         $values = [];
@@ -62,18 +69,27 @@ class Rules
             $values[] = $card->getValue();
         }
         sort($values);
-        if ($values[4] == 14)
-        {
+        if ($values[4] == 14) {
             return $this->isStraightFlush($hand);
         }
         return false;
     }
 
+    /**
+     * Check if the hand is a straight flush.
+     * @param array<CardGraphic|Card> $hand The hand to check.
+     * @return bool If the hand is a straight flush.
+     */
     public function isStraightFlush(array $hand): bool
     {
         return $this->isFlush($hand) && $this->isStraight($hand);
     }
 
+    /**
+     * Check if the hand is a flush.
+     * @param array<CardGraphic|Card> $hand The hand to check.
+     * @return bool If the hand is a flush.
+     */
     public function isFlush(array $hand): bool
     {
         $suit = $hand[0]->getSuit();
@@ -85,6 +101,11 @@ class Rules
         return true;
     }
 
+    /**
+     * Check if the hand is a straight.
+     * @param array<CardGraphic|Card> $hand The hand to check.
+     * @return bool If the hand is a straight.
+     */
     public function isStraight(array $hand): bool
     {
         $values = [];
@@ -100,6 +121,11 @@ class Rules
         return true;
     }
 
+    /**
+     * Check if the hand is a four of a kind.
+     * @param array<CardGraphic|Card> $hand The hand to check.
+     * @return bool If the hand is a four of a kind.
+     */
     public function isFourOfAKind(array $hand): bool
     {
         $values = [];
@@ -112,6 +138,11 @@ class Rules
         return false;
     }
 
+    /**
+     * Check if the hand is a full house.
+     * @param array<CardGraphic|Card> $hand The hand to check.
+     * @return bool If the hand is a full house.
+     */
     public function isFullHouse(array $hand): bool
     {
         $values = [];
@@ -124,6 +155,11 @@ class Rules
         return false;
     }
 
+    /**
+     * Check if the hand is a three of a kind.
+     * @param array<CardGraphic|Card> $hand The hand to check.
+     * @return bool If the hand is a three of a kind.
+     */
     public function isThreeOfAKind(array $hand): bool
     {
         $values = [];
@@ -139,6 +175,11 @@ class Rules
         return false;
     }
 
+    /**
+     * Check if the hand is two pairs.
+     * @param array<CardGraphic|Card> $hand The hand to check.
+     * @return bool If the hand is two pairs.
+     */
     public function isTwoPairs(array $hand): bool
     {
         $values = [];
@@ -151,6 +192,11 @@ class Rules
         return false;
     }
 
+    /**
+     * Check if the hand is one pair.
+     * @param array<CardGraphic|Card> $hand The hand to check.
+     * @return bool If the hand is one pair.
+     */
     public function isOnePair(array $hand): bool
     {
         $values = [];

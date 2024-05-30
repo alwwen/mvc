@@ -1,8 +1,10 @@
 <?php
 
 namespace App\PokerSquare;
+
 use App\Card\DeckOfCards;
 use App\Card\CardGraphic;
+use App\Card\Card;
 use App\PokerSquare\Rules;
 
 /**
@@ -11,7 +13,7 @@ use App\PokerSquare\Rules;
 class PokerSquare
 {
     /**
-     * @var CardHand[][] $field A 5x5 field of card hands.
+     * @var array<array<CardGraphic|Card|null>> $field A 5x5 field of cards.
      */
     private $field;
 
@@ -36,11 +38,11 @@ class PokerSquare
     public function __construct()
     {
         $this->field = [
-            [NULL, NULL, NULL, NULL, NULL],
-            [NULL, NULL, NULL, NULL, NULL],
-            [NULL, NULL, NULL, NULL, NULL],
-            [NULL, NULL, NULL, NULL, NULL],
-            [NULL, NULL, NULL, NULL, NULL]
+            [null, null, null, null, null],
+            [null, null, null, null, null],
+            [null, null, null, null, null],
+            [null, null, null, null, null],
+            [null, null, null, null, null]
         ];
         $this->scores = [
             0 => [
@@ -91,7 +93,7 @@ class PokerSquare
 
     /**
      * Get the field.
-     * @return CardHand[][] The field.
+     * @return array<array<CardGraphic|Card|null>> The field.
      */
     public function getField(): array
     {
@@ -154,7 +156,7 @@ class PokerSquare
     {
         foreach ($this->field as $row) {
             foreach ($row as $card) {
-                if ($card === NULL) {
+                if ($card === null) {
                     return false;
                 }
             }
