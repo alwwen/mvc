@@ -4,5 +4,10 @@
 
 {% block bodypro %}
     <h1 class="titles">PokerSquare</h1>
-    <p>Välkommen till spelet pokersquares.</p>
+    <p>Välkommen till spelet pokersquares. I detta spelet ska man samla poker händer i vågrät och lodrät riktning.
+        Klicka på korten för att placera dem i rutan.
+    </p>
+    <form method="get" action="{{ path('projInit') }}">
+        <input type="submit" name="do_it" value="Spela spelet!">
+    </form>
 {% endblock %}

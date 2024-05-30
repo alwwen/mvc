@@ -9,7 +9,7 @@
         <h2>Game Over!</h2>
         <h3>Final Score: {{ game.getTotalScores().AP }}AP - {{ game.getTotalScores().BP }}BP</h3>
         <form method="get" action="{{ path('projInit') }}">
-            <input type="submit" name="do_it" value="Play Again">
+            <input type="submit" name="do_it" value="Spela igen">
         </form>
     {% else %}
         {% if topcard.suit == "♥️" or topcard.suit == "♦️" %}

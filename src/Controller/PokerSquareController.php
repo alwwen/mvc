@@ -63,4 +63,13 @@ class PokerSquareController extends AbstractController
 
         return $this->redirectToRoute('projPlay');
     }
+
+    /**
+     * @Route("/proj/about", name="projAbout")
+     */
+    #[Route('/proj/about', name: 'projAbout')]
+    public function projAbout(): Response
+    {
+        return $this->render('pokersquare/about.html.twig');
+    }
 }
