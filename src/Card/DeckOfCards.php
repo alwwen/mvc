@@ -77,8 +77,20 @@ class DeckOfCards
         return array_splice($this->deck, 0, $numberOfCards);
     }
 
+    /**
+     * Function to get the size of the deck.
+     * @return int The size of the deck.
+     */
     public function getDeckSize(): int
     {
         return count($this->deck);
+    }
+
+    /**
+     * Function to look at the top card of the deck
+     */
+    public function peekTopCard(): Card
+    {
+        return $this->deck[0];
     }
 }

@@ -13,28 +13,19 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <header class="header">
-        <p>MVC</p>
+    <header class="header-proj">
+        <p>PokerSquare</p>
         <nav>
             <ul>
-                <li><a href="{{ path('home') }}">Home</a></li>
-                <li><a href="{{ path('about') }}">About</a></li>
-                <li><a href="{{ path('report') }}">Report</a></li>
-                <li><a href="{{ path('lucky') }}">Lucky</a></li>
-                <li><a href="{{ path('api')}}">API</a></li>
-                <li><a href="{{ path('card')}}">Card</a></li>
-                <li><a href="{{ path('game')}}">Tjugoett</a></li>
-                <li><a href="{{ path('book_show_all')}}">Library</a></li>
-                <li><a href="{{ path('metrics')}}">Metrics</a></li>
-                <li><a href="{{ path('proj')}}">Project</a></li>
+                <li><a href="{{ path('home') }}">Project Home</a></li>
             </ul>
         </nav>
     </header>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="proj">
+        {% block bodypro %}{% endblock %}
     </body>
-    <footer>
-        <div class="footer-text">
+    <footer class="footer">
+        <div class="footer-text-proj">
             <h2>About the course</h2>
             <p>Kursen MVC handlar om att skapa en hemsida med verktyget Symfony. Men inte bara det.
                 Vi ska även koppla ihop hemsidan med databaser och jobba objektorienterat i PHP.
@@ -42,11 +33,11 @@
                 i hur man kan använda Git lär vi oss också.
             </p>
         </div>
-        <div class="footer-links">
+        <div class="footer-links-proj">
             <h2>Github Links</h2>
             <a href="https://github.com/alwwen/mvc">Github Repo for this site</a>
             <a href="https://github.com/dbwebb-se/mvc">Github Repo for the course</a>
         </div>
-        <div class="footer-signature">&copy; Alexander Winblad 2024</div>
+        <div class="footer-signature-proj">&copy; Alexander Winblad 2024</div>
     </footer>
 </html>

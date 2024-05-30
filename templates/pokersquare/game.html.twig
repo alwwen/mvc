@@ -1,0 +1,73 @@
+{% extends "pokersquare/base2.html.twig" %}
+
+{% block title %}PokerSquare{% endblock %}
+
+{% block bodypro %}
+    <h1 class="titles">PokerSquare Game</h1>
+    <p>Click on the cards to place them in the grid.</p>
+    {% if game.gameDone %}
+        <h2>Game Over!</h2>
+        <h3>Final Score: {{ game.getTotalScores().AP }}AP - {{ game.getTotalScores().BP }}BP</h3>
+        <form method="get" action="{{ path('projInit') }}">
+            <input type="submit" name="do_it" value="Play Again">
+        </form>
+    {% else %}
+        {% if topcard.suit == "♥️" or topcard.suit == "♦️" %}
+            <p class="card card_red">{{ topcard.getAsString() }}</p>
+        {% else %}
+            <p class="card">{{ topcard.getAsString() }}</p>
+        {% endif %}
+    {% endif %}
+    <div class="pokersquaregame">
+        <div class="grid">
+            {% for rowIndex, row in game.getField %}
+                <div class="grid-row">
+                    {% for colIndex, card in row %}
+                        {% if card is not null %}
+                            <div class="cell">
+                                    {% if card.suit == "♥️" or card.suit == "♦️" %}
+                                        <p class="card card_red">{{ card.getAsString() }}</p>
+                                    {% else %}
+                                        <p class="card">{{ card.getAsString() }}</p>
+                                    {% endif %}
+                            </div>
+                        {% else %}
+                            <a href="{{ path('add_card', {'row': rowIndex, 'col': colIndex}) }}">
+                                <div class="cell">
+                                    {% if card is not null %}
+                                        {% if card.suit == "♥️" or card.suit == "♦️" %}
+                                            <p class="card card_red">{{ card.getAsString() }}</p>
+                                        {% else %}
+                                            <p class="card">{{ card.getAsString() }}</p>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            </a>
+                        {% endif %}
+                    {% endfor %}
+                    <div class="row-scores">
+                        <p>AP: {{ game.getScores[rowIndex].AP }}</p>
+                        <p>BP: {{ game.getScores[rowIndex].BP }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="column-scores">
+                {% for colIndex in 0..4 %}
+                    <div class="column-score">
+                        <p>AP: {{ game.getScores[colIndex + 5].AP }}</p>
+                        <p>BP: {{ game.getScores[colIndex + 5].BP }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        
+
+        <div class="total-scores">
+            <div>Total AP: {{ game.getTotalScores().AP }}</div>
+            <div>Total BP: {{ game.getTotalScores().BP }}</div>
+        </div>
+    </div>
+
+
+{% endblock %}
